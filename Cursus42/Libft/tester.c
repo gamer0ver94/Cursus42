@@ -6,11 +6,12 @@ int main (void)
 	char n;
 	char a;
 	char str[15];
+	char str2[15];
 	int size;
 
 	printf("1. ft_isalpha	/	2. ft_isalnum	/	3. ft_isdigit \n");
 	printf("4. ft_isprint	/	5. ft_strlen	/	6. ft_isascii \n");
-	printf("7. ft_memset \n");
+	printf("7. ft_memset	/	8. ft_bzero\n");
 	printf("PLEASE SELECT ONE FUNCTION TO TEST \n");
 	scanf("%s", &n);
 	system("clear");
@@ -67,7 +68,7 @@ int main (void)
 			break;
 		case '7':
 			printf("FT_MEMSET\n");
-			printf("WRITE A PHRASE\n");
+			printf("WRITE A WORD\n");
 			scanf("%s",&*str);
 			printf("WRITE A CARACTER TO REPLACE OTHER CARACTERS\n");
 			scanf("%s", &a);
@@ -75,6 +76,27 @@ int main (void)
 			scanf("%d",&size);
 			ft_memset(str,a,size);
 			printf("%s", &*str);
+			break;
+		case '8':
+			printf("FT_BZERO\n");
+			printf("WRITE A WORD\n");
+			scanf("%s", &*str);
+			printf("WRITE THE NUMBER OF CARACTERS TO ERASE \n");
+			printf("%s", &*str);
+			scanf("%d", &size);
+			ft_bzero(str,size);
+			printf("%s", &*str);
+			break;
+		case '9':
+			printf("FT_MEMCPY\n");
+			printf("WRITE A WORD OR LESS EMPTY\n");
+			scanf("%s",&*str);
+			printf("WRITE A WORD TO COPY TO YOUR PREVIOUS WORD\n");
+			scanf("%s", &*str2);
+			printf("WRITE THE NUMBER OF CARACTER YOU WANT TO COPY\n");
+			scanf("%d", &size);
+			ft_memcpy(str,str2,size);
+			printf("%c", *(char*)str);
 			break;
 
 		default:
