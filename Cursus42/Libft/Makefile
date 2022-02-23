@@ -4,8 +4,8 @@ CC = gcc
 OBJ = exe
 CFLAGS = -Wall -Werror -Wextra
 all:
-	${CC} ${CFlAGS} //fuctions
+	${CC} ${CFlAGS} tester.c ft_isalpha.c ft_isalnum.c ft_isdigit.c ft_isprint.c ft_strlen.c ft_isascii.c ft_memset.c
 run:
-	./exe
+	./a.out
 clean:
-	rm -rf *./out
+	rm -rf *a.out
