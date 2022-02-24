@@ -4,9 +4,10 @@ void	ft_bzero(void * s, int n)
 	char *str = s;
 
 	i = 0;
-	while (n > i)
+	while (i < n)
 	{
 		str[i] = '\0';
 		i++;
 	}
 }
+//review

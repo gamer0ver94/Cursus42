@@ -11,7 +11,7 @@ int main (void)
 
 	printf("1. ft_isalpha	/	2. ft_isalnum	/	3. ft_isdigit \n");
 	printf("4. ft_isprint	/	5. ft_strlen	/	6. ft_isascii \n");
-	printf("7. ft_memset	/	8. ft_bzero\n");
+	printf("7. ft_memset	/	8. ft_bzero	/	9. ft_memcpy\n");
 	printf("PLEASE SELECT ONE FUNCTION TO TEST \n");
 	scanf("%s", &n);
 	system("clear");
@@ -87,6 +87,7 @@ int main (void)
 			ft_bzero(str,size);
 			printf("%s", &*str);
 			break;
+
 		case '9':
 			printf("FT_MEMCPY\n");
 			printf("WRITE A WORD OR LESS EMPTY\n");
@@ -96,9 +97,11 @@ int main (void)
 			printf("WRITE THE NUMBER OF CARACTER YOU WANT TO COPY\n");
 			scanf("%d", &size);
 			ft_memcpy(str,str2,size);
-			printf("%c", *(char*)str);
+			printf("%s", &*str);
 			break;
 
+		case 10:
+			printf("FT_");
 		default:
 			printf("ERROR\n");
 	}

@@ -1,12 +1,14 @@
-void ft_memset(char *str, char a, int n)
+void ft_memset(void *str, int c, int n)
 {
 	int i;
+	char *str2;
 
+	str2 = (char*)str;
 	i = 0;
 	while (i < n)
 	{
-		str[i] = a;
+		str2[i] = c;
 		i++;
 	}
 }
-
+//review
