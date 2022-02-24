@@ -1,7 +1,8 @@
-void	ft_bzero(void * s, int n)
+#include "libft.h"
+void	ft_bzero(void * s, size_t n)
 {
 	int i;
-	char *str = s;
+	char *str = (char *)s;
 
 	i = 0;
 	while (i < n)
