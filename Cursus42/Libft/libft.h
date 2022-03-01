@@ -20,4 +20,5 @@ void *ft_memchr(const void *str, int c, size_t n); // done
 int ft_memcmp(const void *str1, const void *str2, size_t n);
 char *ft_strstr(const char *haystack, const char *needle);// not done 
 int ft_atoi(const char *str);//done
-void *ft_calloc(size_t nitems, size_t size);
+void *ft_calloc(size_t nitems, size_t size); //review
+char *ft_strdup(const char *string); //review
