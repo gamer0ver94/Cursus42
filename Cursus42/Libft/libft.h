@@ -1,10 +1,13 @@
 // Function Prototypes
 #include <stddef.h>
+#include <stdlib.h>
+#include <string.h> //remove after use
+#include <stdio.h> //remove after
 int ft_isalpha(int a); //done
 int ft_isalnum(int a); //done
 int ft_isdigit(int a); //done
 int ft_isprint(int a); //done verify
-int ft_strlen(char *str); //done
+size_t ft_strlen(const char *str); //done
 int ft_isascii(int a); //done
 void *ft_memset(void *str, int c, size_t n); //done
 void ft_bzero(void *s, size_t n);//done
@@ -21,4 +24,6 @@ int ft_memcmp(const void *str1, const void *str2, size_t n);
 char *ft_strstr(const char *haystack, const char *needle);// not done 
 int ft_atoi(const char *str);//done
 void *ft_calloc(size_t nitems, size_t size); //review
-char *ft_strdup(const char *string); //review
+char *ft_strdup(const char *string); //need review function might have a problem with ft_strlen
+char *ft_substr(char const *s, unsigned int start, size_t len);
+size_t ft_strlcpy(char* dest, const char*src, size_t destsize);
