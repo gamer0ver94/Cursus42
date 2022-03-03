@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/03 16:20:13 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/03/03 19:23:46 by dpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 static int countfunction(char *s1, char *set)
 {
@@ -28,32 +40,75 @@ static int countfunction(char *s1, char *set)
 }
 char *ft_strtrim(char const *s1, char const *set)
 {
-   
-    char *newstr;
     int i;
     int j;
-    int count;
     int h;
-    
+    char *newstr;
+    int size;
+
     h = 0;
-    i = 0;
+    newstr = (char *)malloc(sizeof(char) * 10);
     j = 0;
-    count = countfunction(s1,set);
-    newstr = (char*)malloc(sizeof(char) * count + 1);
-    while(s1[i])
+    i = 0;
+    size = ft_strlen(set);
+    while (s1[i] - 1)
     {
-        while (s1[i])
+        while(s1[i + 1] == set[j] && s1[i + size] == set[size)])
         {
-            while(s1[i] != set[j])
+            if(s1[i + size] == set[size]))
             {
-                while(s[i] == set[j] && j != ft_strlen(set))
-                {
-                    
-                }
-                newstr[h] = s4[i];
-                i++;
+                size--;
             }
-            i++;
+            if(size == 0)
+            {
+                size = ft_strlen(set);
+                i = i + size;
+                size = size - 1;
+            }
         }
+        newstr[h] = s1[1];
+        i++;
     }
 }
+
+
+
+
+
+
+
+///test
+
+// char *ft_strtrim(char const *s1, char const *set)
+// {
+//     int i;
+//     int j;
+//     int h;
+//     char *newstr;
+//     int size;
+
+//     h = 0;
+//     newstr = (char *)malloc(sizeof(char) * 20);
+//     j = 0;
+//     i = 0;
+//     size = strlen(set) - 1;
+//     while (s1[i])
+//     {
+//         while((s1[i] == set[j]) && (s1[i + size] == set[size]))
+//         {
+//             if(s1[i + size] == set[size])
+//             {
+//                 size--;
+//             }
+//             if(size == 0)
+//             {
+//                 size = strlen(set);
+//                 i = i + size;
+//                 size = size - 1;
+//             }
+//         }
+//         newstr[h] = s1[i];
+//         h++;
+//         i++;
+//     }
+// }
