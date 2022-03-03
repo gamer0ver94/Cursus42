@@ -6,6 +6,7 @@ size_t i;
 char *destination;
 char *source;
 
+i = 0; 
 destination = (char*)dest;
 source = (char*)src;
 

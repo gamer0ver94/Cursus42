@@ -21,7 +21,7 @@ char *ft_strrchr(const char *str, int c); //done
 int ft_strncmp(const char *str1, const char *str2, size_t n); //done
 void *ft_memchr(const void *str, int c, size_t n); // done
 int ft_memcmp(const void *str1, const void *str2, size_t n);
-char *ft_strstr(const char *haystack, const char *needle);// not done 
+char *ft_strnstr(const char *haystack, const char *needle, size_t len);// not done 
 int ft_atoi(const char *str);//done
 void *ft_calloc(size_t nitems, size_t size); //review
 char *ft_strdup(const char *string); //need review function might have a problem with ft_strlen
