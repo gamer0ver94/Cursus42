@@ -14,17 +14,16 @@
 //review
 void ft_putnbr_fd(int n, int fd)
 {
-    char *str;
     int x;
     x = 0;
     if(n < 0)
     {
-        x = x * -1;
-        write (fd, '-' , 1);
+        n = n * -1;
+        write (fd, "-" , 1);
     }
     while (n > 9)
     {
-        putchar(x % 10 + '0');
-        x = x / 10;
+        putchar(n % 10 + '0');
+        n = n / 10;
     }
 }
