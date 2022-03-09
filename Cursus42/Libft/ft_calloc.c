@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 16:19:05 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/03 16:19:06 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/03/08 07:39:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void *ft_calloc(size_t nitems, size_t size)
    {
         return (NULL);
    }
+   ft_bzero(pointer, nitems * size);
    return(pointer);
 }

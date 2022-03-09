@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 16:20:05 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/03 16:20:06 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/03/08 04:26:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,30 @@
 // still need to review the return
 char *ft_strnstr(const char *big, const char *little , size_t len)
 {
-    int i;
+    size_t i;
     size_t h;
 
     h = 0;
-    i = 0;
-    if (!little)
+    if (little[0] == 0)
     {
         return ((char*)big);
     }
-    while(big[i] != 0)
+    while(big[h] != 0)
     {
-        if(big[i] == little[h])
+        i = 0;
+        while(big[i + h] == little[i] && len > (h + i))
         {
-            while(big[i] == little[h] && len > h)
+            if(big[h + i] == 0 && (h + i) < len)
             {
-                if(h == len && big[i] == little[h])
-                {
-                    return ((char*)little);
-                }
-                i++;
-                h++;
+                return ((char *)&big[h]);
             }
+            i++;
         }
-        h = 0;
-        i++;
+        if(little [i] == 0)
+        {
+            return ((char *)big + h);
+        };
+        h++;
     }
     return (NULL);
 }
