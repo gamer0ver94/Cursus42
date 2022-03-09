@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/09 16:54:33 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/03/09 19:05:51 by dpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Function Prototypes
 #include <stddef.h>
 #include <stdlib.h>
@@ -10,6 +22,8 @@ void *content;
 struct s_list *next;
 } t_list;
 
+t_list *ft_lstlast(t_list *lst);
+int ft_lstsize(t_list *lst);
 int ft_isalpha(int a); //done
 int ft_isalnum(int a); //done
 int ft_isdigit(int a); //done
@@ -46,3 +60,4 @@ void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
 t_list *ft_lstnew(void *content);
 void ft_lstadd_front(t_list **lst, t_list *new);
+

@@ -6,18 +6,19 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:42:52 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/08 02:02:07 by marvin           ###   ########.fr       */
+/*   Updated: 2022/03/09 15:02:04 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_isalnum(int a)
 {
 	if (a >= 'A' && a <= 'Z')
 		return (1);
-	else if (a >= '0' && a <= '9')
+	if (a >= '0' && a <= '9')
 		return (1);
-	else if (a >= 'a' && a <= 'z')
+	if (a >= 'a' && a <= 'z')
 		return (1);
 	return (0);
 }
