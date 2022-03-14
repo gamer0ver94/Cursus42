@@ -6,11 +6,12 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:54:33 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/10 10:28:11 by marvin           ###   ########.fr       */
+/*   Updated: 2022/03/14 11:36:14 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Function Prototypes
+#ifndef LIBFT_H
+# define LIBFT_H
 #include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -65,4 +66,4 @@ void ft_lstdelone(t_list *lst, void (*del)(void*));
 void ft_lstclear(t_list **lst, void (*del)(void*));
 void ft_lstiter(t_list *lst, void (*f)(void *));
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
-
+#endif
