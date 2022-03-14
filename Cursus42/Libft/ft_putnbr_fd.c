@@ -22,6 +22,11 @@ void	ft_putnbr_fd(int n, int fd)
 		l = l * -1;
 		write (fd, "-", 1);
 	}
+	if (l == -2147483648)
+	{
+		ft_putchar_fd('2',fd);
+		l = 147483648;
+	}
 	if (l > 9)
 	{
 		ft_putnbr_fd(l / 10, fd);

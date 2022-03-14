@@ -1,85 +1,37 @@
 #include "libft.h"
-char numberofwords(char const *s, char c)
-{
-    int i;
-    int words;
-
-    words = 0;
-    i = 0;
-    while (s[i] != '\0')
-    {
-        if (s[i] = c)
-        {
-            i++;
-        }
-        if (s[i] != c)
-        {
-            if(s[i + 1] == c || s[i + 1] == '\0')
-            {
-                words++;
-            }
-            i++;
-        }
-    }
-    return (words);
-}
-int wordlenght(char const *s, char c)
+int indexfind(char const *s, char c, int index)
 {
     int j;
-    int i;
 
-    i = 0;
     j = 0;
-    while (s[i] == c)
+    while (s[index] == c)
     {
-        i++;
+        index++;
     }
-    while (s[ i + j] != c) //not sure
+    while (s[ index + j] != c)
     {
         j++;
     }
-    return (j);
+    return (j + index);
 }
-int allocatecpy(char const *s, char **str, char c)
+
+char **copyword(char const *s, char **str, int index, int i, char c)
 {
-    int i;
     int j;
 
-    i = 0;
     j = 0;
-    while (i < numberofwords(s,c))
+    while (s[index + j] == c)
     {
-        str[i] = malloc(sizeof(char) * wordlenght(s[i] + j, c));
-        j = wordlenght(s[i] + j, c);
-        i++;
+        index++;
     }
-}
-char **ft_split(char const *s, char c)
-{
-    int i = 0;
-    char **str;
-    str = malloc(sizeof(char) *numberofwords(s,c));
-    while (i < numberofwords(s,c))
+    while (s[index + j] != c && s[index + j] != 0)
     {
-        allocatecpy(s,str,c);
-        i++;
+        str[i][j] = s[index + j];
+        j++;
     }
+    str[i][j] = '\0';
+    return (str); 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 char numberofwords(char const *s, char c)
 {
     int i;
@@ -87,15 +39,15 @@ char numberofwords(char const *s, char c)
 
     words = 0;
     i = 0;
-    while (s[i] != '\0')
+    while (s[i])
     {
         if (s[i] == c)
         {
             i++;
         }
-        if (s[i] != c)
+        if (s[i] != c && s[i] != 0)
         {
-            if(s[i + 1] == c || s[i + 1] == '\0')
+            if(s[i + 1] == c || s[i + 1] == 0)
             {
                 words++;
             }
@@ -104,6 +56,8 @@ char numberofwords(char const *s, char c)
     }
     return (words);
 }
+
+
 int wordlenght(char const *s, char c, int index)
 {
     int j;
@@ -123,18 +77,26 @@ char **allocatecpy(char const *s, char **str, char c, int words)
 {
     int i;
     int index;
+    int wordl;
 
     i = 0;
-    index = wordlenght(s, c, 0);
+    index = 0;
+    
+    wordl = wordlenght(s, c, 0);
     while (i < words)
     {
-        str[i] = malloc(sizeof(char) * index);
-        index = wordlenght(s[i] + index, c, index);
-        copyword(s,str[i],c,index);
+        str[i] = malloc(sizeof(char) * wordl + 1);
+        if(!str[i])
+        {
+            return(NULL);
+        }
+        copyword(s,str,index,i, c);
+        index = indexfind(s, c, index);
         i++;
     }
     return (str);
 }
+
 char **ft_split(char const *s, char c)
 {
     int i = 0;
@@ -142,19 +104,20 @@ char **ft_split(char const *s, char c)
     int words;
 
     words =  numberofwords(s,c);
-    str = malloc(sizeof(char) *words);
+    // if(!s && !c)
+    // {
+    //     return(0);
+    // }
+    str = malloc(sizeof(char *) * (words + 1));
+    if(!str)
+    {
+        return (NULL);
+    }
     while (i < words)
     {
-        allocatecpy(s,str[i],c,words);
+        allocatecpy(s,str,c,words);
         i++;
     }
-}
-int main() {
-  **str = ft_split(" jk jk", ' ');
-  while (i < 2)
-  {
-      printf("%s",str[i])
-      i++;
-  }
-  return 0;
+    str[words] = '\0';
+    return (str);
 }
