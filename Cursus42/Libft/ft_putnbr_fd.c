@@ -24,7 +24,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (l == -2147483648)
 	{
-		ft_putchar_fd('2',fd);
+		ft_putchar_fd('2', fd);
 		l = 147483648;
 	}
 	if (l > 9)
