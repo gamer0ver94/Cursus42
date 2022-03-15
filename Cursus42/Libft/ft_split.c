@@ -15,7 +15,7 @@ int indexfind(char const *s, char c, int index)
     return (j + index);
 }
 
-char **copyword(char const *s, char **str, int index, int i, char c)
+char *copyword(char const *s, char *str, int index, char c)
 {
     int j;
 
@@ -26,10 +26,10 @@ char **copyword(char const *s, char **str, int index, int i, char c)
     }
     while (s[index + j] != c && s[index + j] != 0)
     {
-        str[i][j] = s[index + j];
+        str[j] = s[index + j];
         j++;
     }
-    str[i][j] = '\0';
+    str[j] = '\0';
     return (str); 
 }
 char numberofwords(char const *s, char c)
@@ -90,7 +90,7 @@ char **allocatecpy(char const *s, char **str, char c, int words)
         {
             return(NULL);
         }
-        copyword(s,str,index,i, c);
+        copyword(s,str[i],index, c);
         index = indexfind(s, c, index);
         i++;
     }
@@ -103,11 +103,9 @@ char **ft_split(char const *s, char c)
     char **str;
     int words;
 
+    if(!s)
+        return (0);
     words =  numberofwords(s,c);
-    // if(!s && !c)
-    // {
-    //     return(0);
-    // }
     str = malloc(sizeof(char *) * (words + 1));
     if(!str)
     {
