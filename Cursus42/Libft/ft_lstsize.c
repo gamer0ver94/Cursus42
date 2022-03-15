@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 19:04:36 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/14 12:12:23 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:17:25 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	while (lst)
-    {
+	{
 		lst = lst->next;
 		i++;
-    }
+	}
 	return (i);
 }

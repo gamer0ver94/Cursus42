@@ -24,9 +24,6 @@ NAME = libft.a
 all:	${NAME}
 ${NAME}:	${OBJS}
 	ar rcs $(NAME) $(OBJS)
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 clean:
 	${RM} ${OBJS} ${BONUS_OBJS}
 fclean:		clean
