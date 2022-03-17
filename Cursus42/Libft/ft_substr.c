@@ -22,9 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	newstr = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!newstr)
-	{
 		return (NULL);
-	}
 	while (s[i])
 	{
 		if (i < len && start <= ft_strlen(s))
@@ -33,6 +31,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		}
 		i++;
 	}
-	newstr[len] = '\0';
-	return (newstr);
+	if(start > ft_strlen(s))
+		newstr[0] = 0;
+	else
+		newstr[len] = '\0';
+	return (newstr);	
 }
