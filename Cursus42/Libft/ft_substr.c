@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 15:27:11 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/15 17:19:41 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/03/17 15:28:09 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		}
 		i++;
 	}
-	if(start > ft_strlen(s))
+	if (start > ft_strlen(s))
 		newstr[0] = 0;
 	else
 		newstr[len] = '\0';
-	return (newstr);	
+	return (newstr);
 }
