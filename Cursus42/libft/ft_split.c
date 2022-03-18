@@ -12,30 +12,30 @@
 
 #include "libft.h"
 
-static int	ft_hm(char const *s, char c)
+static int	wordcount(char const *s, char c)
 {
-	size_t	nbr;
+	size_t	j;
 	int		i;
 
-	nbr = 0;
+	j = 0;
 	i = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		if (i > 0 && s[i] && s[i - 1] == c)
-			nbr++;
+			j++;
 		if (s[i])
 			i++;
 	}
-	if (nbr == 0 && s[i - 1] == c)
+	if (j == 0 && s[i - 1] == c)
 		return (0);
 	if (s[0] != c)
-		nbr++;
-	return (nbr);
+		j++;
+	return (j);
 }
 
-static char	**ft_mal(char **strs, char const *s, char c)
+static char	**wordslenght(char **str, char const *s, char c)
 {
 	size_t	count;
 	int		i;
@@ -50,21 +50,21 @@ static char	**ft_mal(char **strs, char const *s, char c)
 			count++;
 		else if (h > 0 && s[h - 1] != c)
 		{
-			strs[i] = malloc(sizeof(char) * (count + 1));
-			if (!strs[i])
+			str[i] = malloc(sizeof(char) * (count + 1));
+			if (!str[i])
 				return (0);
 			count = 0;
 			i++;
 		}
 		if (s[h + 1] == '\0' && s[h] != c)
-			if (!(strs[i] = malloc(sizeof(char) * count + 1)))
+			if (!(str[i] = malloc(sizeof(char) * count + 1)))
 				return (0);
 		h++;
 	}
-	return (strs);
+	return (str);
 }
 
-static char	**ft_cpy(char **strs, char const *s, char c)
+static char	**wordcpy(char **strs, char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -95,27 +95,27 @@ static char	**ft_cpy(char **strs, char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**rtn;
-	int		nbr_w;
+	char	**str;
+	int		words;
 
 	if (!s || !*s)
 	{
-		if (!(rtn = malloc(sizeof(char *) * 1)))
+		if (!(str = malloc(sizeof(char *) * 1)))
 			return (NULL);
 		*rtn = (void *)0;
 		return (rtn);
 	}
-	nbr_w = ft_hm(s, c);
-	rtn = malloc(sizeof(char *) * (nbr_w + 1));
+	words = wordcount(s, c);
+	str = malloc(sizeof(char *) * (words + 1));
 	if (!rtn)
 		return (0);
-	if (ft_mal(rtn, s, c) != 0)
-		ft_cpy(rtn, s, c);
+	if (wordlenght(str, s, c) != 0)
+		wordcpy(str, s, c);
 	else
 	{
 		free(rtn);
 		return (NULL);
 	}
-	rtn[nbr_w] = (void *)0;
+	str[words] = (void *)0;
 	return (rtn);
 }
