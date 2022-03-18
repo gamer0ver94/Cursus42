@@ -27,7 +27,7 @@ clean:
 fclean:		clean
 	${RM} ${NAME}
 
-re:		fclean ${NAME}
+re:		fclean all
 bonus:	${OBJS} ${BONUS_OBJS}
 	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 .PHONY:			all clean fclean re bonus

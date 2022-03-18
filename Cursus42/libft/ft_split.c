@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:59:19 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/18 14:42:11 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/03/18 19:23:26 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,18 @@ static int	wordcount(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c)
+		{
 			i++;
-		if (i > 0 && s[i] && s[i - 1] == c)
-			j++;
-		if (s[i])
+		}
+		while (s[i] != c && s[i] != 0)
+		{
+			if (s[i + 1] == c || s[i + 1] == 0)
+			{
+				j++;
+			}
 			i++;
+		}
 	}
-	if (j == 0 && s[i - 1] == c)
-		return (0);
-	if (s[0] != c)
-		j++;
 	return (j);
 }
 
