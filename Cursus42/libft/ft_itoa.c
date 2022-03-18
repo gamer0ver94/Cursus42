@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:08:22 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/15 18:42:59 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/03/18 14:09:46 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ char	*ft_itoa(int n)
 
 	counted = digitcount(n);
 	str = malloc(sizeof(char) * counted + 1);
-	if (!str)
-		return (NULL);
 	if (n == -2147483648)
 	{	
 		n = -147483648;

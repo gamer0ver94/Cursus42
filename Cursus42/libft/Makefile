@@ -1,5 +1,3 @@
-#My makefile need to have es règles $(NAME), all, clean, fclean et re.
-
 CC = gcc
 
 OBJS = ${SRCS:.c=.o}

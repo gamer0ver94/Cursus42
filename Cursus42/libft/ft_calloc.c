@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/03 16:20:13 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/14 11:32:40 by dpaulino         ###   ########.fr       */
+/*   Created: 2022/03/03 16:19:05 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/03/09 14:59:47 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strtrim(char const *s1, char const *set)
+//review at the end
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	size_t	i;
+	void	*pointer;
 
-	if (!s1 || !set)
+	pointer = malloc (nitems * size);
+	if (!pointer)
 	{
 		return (NULL);
 	}
-	while (*s1 && ft_strchr(set, *s1))
-	{
-		s1++;
-	}
-	i = ft_strlen(s1);
-	while (i && ft_strchr(set, s1[i]))
-	{
-		i--;
-	}
-	return (ft_substr(s1, 0, i + 1));
+	ft_bzero(pointer, nitems * size);
+	return (pointer);
 }
