@@ -6,16 +6,14 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:54:33 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/15 19:07:59 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/03/19 17:44:46 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
