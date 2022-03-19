@@ -1,9 +1,19 @@
 CC = gcc
 
-SRCS =
+SRCS =	
 
 OBJS = 
 
 FLAGS =
 
 NAME =
+
+LIBFT = 
+
+all:
+
+clean:
+
+fclean:
+
+re:
