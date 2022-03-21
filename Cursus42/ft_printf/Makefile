@@ -1,19 +1,24 @@
 CC = gcc
 
+RM = rm -f
+
 SRCS =	
 
-OBJS = 
+OBJS = ${SRC:.c=.o}
 
-FLAGS =
+FLAGS = -Wall -Werror -Wextra
 
-NAME =
+NAME = libftprint.a
 
-LIBFT = 
+LIBFT = ../libft
 
-all:
+all:	${NAME}
+${NAME}:	${OBJS}
+	ar rcs $(NAME) $(OBJS)
+	cd ${LIBFT} make
 
 clean:
-
+	${RM}
 fclean:
 
 re:
