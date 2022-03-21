@@ -10,52 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h> //erease;
-#include <stdarg.h>
-#include <libftprint.h>
-#include "libft.h"
+#include "libftprintf.h"
 
-static char *decitohexa(va_list args)
-{
-	int i;
-	char *hexa;
-
-	i = 0;
-	while (args != 0)
-	{
-		args = args % 16;
-		hexa[i] = ft_itoa(args);
-		i++;
-	}
-	return (hexa);
-}
+char a;
 
 static void	argformat(char str, va_list args)
 {
 	if (str == 'c')
 	{
-		return (ft_putchar(va_arg(args)));
+		ft_putchar_fd(args, 1);
 	}
 	if (str == 's')
 	{
-		ft_putstr(va_arg(args));
+		char a = va_arg(args, char);
+		ft_putstr_fd(&a, 1);
 	}
-	if (str == 'p')
-	{
+	// if (str == 'p')
+	// {
 
-	}
-	if (str == 'd')
+	// }
+	// if (str == 'd')
 
-	if (str == 'i')
+	// if (str == 'i')
 
-	if (str == 'u')
+	// if (str == 'u')
 
-	if (str == 'x')
+	// if (str == 'x')
 
-	if (str == 'X')
+	// if (str == 'X')
 
-	if (str == '%')
+	// if (str == '%')
 
 }
 int	ft_printf(const char *str, ...)
@@ -79,9 +63,12 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 }
-int main (void)
+
+int	main(void)
 {
-	char c = 't';
-	ft_printf("%c",c);
+	char	a;
+
+	a = 'B';
+	ft_printf("hello world%c", a);
 	return (0);
 }

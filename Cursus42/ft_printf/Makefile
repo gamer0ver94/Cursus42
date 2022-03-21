@@ -1,8 +1,9 @@
 CC = gcc
 
 RM = rm -f
+LIBFT = ../libft/
 
-SRCS =	
+SRCS =	${LIBFT} libft.h
 
 OBJS = ${SRC:.c=.o}
 
@@ -10,15 +11,13 @@ FLAGS = -Wall -Werror -Wextra
 
 NAME = libftprint.a
 
-LIBFT = ../libft
 
 all:	${NAME}
 ${NAME}:	${OBJS}
-	ar rcs $(NAME) $(OBJS)
-	cd ${LIBFT} make
+	cd ${LIBFT} && make
 
 clean:
-	${RM}
-fclean:
 
+fclean:
+	cd ${LIBFT} && make fclean
 re:
