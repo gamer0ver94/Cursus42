@@ -14,17 +14,17 @@
 
 char a;
 
-static void	argformat(char str, va_list args)
+static void	argformat(char str, va_list pa)
 {
 	if (str == 'c')
 	{
-		ft_putchar_fd(args, 1);
+		ft_putchar_fd(va_arg(pa, int), 1);
 	}
-	if (str == 's')
-	{
-		char a = va_arg(args, char);
-		ft_putstr_fd(&a, 1);
-	}
+	// if (str == 's')
+	// {
+	// 	char a = va_arg(args, char);
+	// 	ft_putstr_fd(&a, 1);
+	// }
 	// if (str == 'p')
 	// {
 
@@ -44,8 +44,8 @@ static void	argformat(char str, va_list args)
 }
 int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	va_start(args, str);
+	va_list pa;
+	va_start(pa, str);
 	int i;
 
 	i = 0;
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			argformat(str[i + 1], args);
+			argformat(str[i + 1], pa);
 		}
 		else
 		{
@@ -61,7 +61,7 @@ int	ft_printf(const char *str, ...)
 		}
 		i++;
 	}
-	va_end(args);
+	va_end(pa);
 }
 
 int	main(void)
