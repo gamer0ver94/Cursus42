@@ -22,6 +22,7 @@ ${NAME}:	${OBJS}
 
 clean:
 	make clean -C ${LIBFT}
+	${RM} ${OBJS}
 	
 fclean:	clean
 	${RM} ${LIBFT}/libft.a

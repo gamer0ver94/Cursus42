@@ -12,13 +12,14 @@
 
 #include "libftprintf.h"
 
-char a;
-
-static void	argformat(char str, va_list pa)
+static int	argformat(char str, va_list pa)
 {
+	int lenght;
+
+	lenght = 0;
 	if (str == 'c')
 	{
-		ft_putchar_fd(va_arg(pa, int), 1);
+		ft_putchar_fd('i',1);
 	}
 	// if (str == 's')
 	// {
@@ -41,19 +42,22 @@ static void	argformat(char str, va_list pa)
 
 	// if (str == '%')
 
+	return (lenght);
 }
 int	ft_printf(const char *str, ...)
 {
 	va_list pa;
 	va_start(pa, str);
 	int i;
+	int lenght;
 
+	lenght = 0;
 	i = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			argformat(str[i + 1], pa);
+			lenght += argformat(str[i + 1], pa);
 		}
 		else
 		{
@@ -62,6 +66,7 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(pa);
+	return (lenght);
 }
 
 int	main(void)
