@@ -188,6 +188,7 @@ int	ft_printf(const char *str, ...)
 	int i;
 	int arglenght;
 
+	lenght = 0;
 	i = 0;
 	arglenght = 0;
 	while (str[i])

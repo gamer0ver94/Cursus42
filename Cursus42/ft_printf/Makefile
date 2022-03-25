@@ -5,11 +5,11 @@ LIBFT = ../libft
 
 SRCS =	ft_printf.c
 
-OBJS = ${SRC:.c=.o}
+OBJS = ${SRCS:.c=.o}
 
 FLAGS = -Wall -Werror -Wextra
 
-NAME = libftprint.a
+NAME = libftprintf.a
 
 
 all:	${NAME}
@@ -22,6 +22,7 @@ ${NAME}:	${OBJS}
 
 clean:
 	make clean -C ${LIBFT}
+	${RM} ${OBJS}
 	
 fclean:	clean
 	${RM} ${LIBFT}/libft.a
