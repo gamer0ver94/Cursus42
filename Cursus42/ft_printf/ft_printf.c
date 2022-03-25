@@ -112,6 +112,7 @@ static int hexaconverter(int arg)
 	int i = 0;
 	int j;
 	char *remainder;
+	int arglenght;
 	j = 0;
 
 	while(co != 0)
@@ -121,7 +122,7 @@ static int hexaconverter(int arg)
 	}
 	remainder = malloc(sizeof(char) * i + 1);
 	co = arg;
-	
+	arglenght = i;
 	while (i != 0)
 	{
 		co = arg % 16;
@@ -141,7 +142,8 @@ static int hexaconverter(int arg)
 		write(1,&remainder[j],1);
 		j--;
 	}
-	return (i);
+	free(remainder);
+	return (arglenght);
 }
 
 static int	formatidentifier(char str, va_list pa)
@@ -209,9 +211,7 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	int	a;
-	int l;
 	a = 3700;
 	ft_printf("%x", a);
-	printf("%p",&l);
 	return (0);
 }
