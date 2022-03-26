@@ -3,7 +3,11 @@ CC = gcc
 RM = rm -f
 LIBFT = ../libft
 
-SRCS =	ft_printf.c
+SRCS =	srcs/ft_printf.c\
+		srcs/ft_hexaconvert.c\
+		srcs/ft_putstr.c\
+		srcs/ft_putnbr.c\
+		srcs/ft_writeitoa.c
 
 OBJS = ${SRCS:.c=.o}
 

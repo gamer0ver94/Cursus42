@@ -15,9 +15,12 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "../libft/libft.h"
+# include "../../libft/libft.h"
 
 
 int ft_printf(const char *, ...);
-
+int hexaconvert(int arg);
+int ft_putstr(char *string);
+int	ft_putnbr(int n);
+int	ft_writeitoa(int n);
 #endif
