@@ -76,6 +76,5 @@ int	ft_hexaconvert(unsigned int arg, char format)
 	tmp = hexastring(arglenght, tmp, arg, format);
 	ft_putstr_fd(tmp, 1);
 	free(tmp);
-	arglenght++;
 	return (arglenght);
 }

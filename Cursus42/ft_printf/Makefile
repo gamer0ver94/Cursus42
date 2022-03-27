@@ -8,7 +8,8 @@ SRCS =	srcs/ft_printf.c\
 		srcs/ft_putstr.c\
 		srcs/ft_putnbr.c\
 		srcs/ft_writeitoa.c\
-		srcs/ft_pointertohexa.c
+		srcs/ft_pointertohexa.c\
+		srcs/ft_unsigneditoa.c
 
 OBJS = ${SRCS:.c=.o}
 

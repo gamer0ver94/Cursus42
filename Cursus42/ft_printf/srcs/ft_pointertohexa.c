@@ -24,7 +24,7 @@ static int	ptrlenghtcount(uintptr_t arg, int counter)
 	return (counter);
 }
 
-char	*ptrhexastring(int i, char *tmp, uintptr_t arg)
+static char	*ptrhexastring(unsigned int i, char *tmp, uintptr_t arg)
 {
 	unsigned int	remainder;
 
@@ -48,7 +48,7 @@ char	*ptrhexastring(int i, char *tmp, uintptr_t arg)
 
 static int	ft_ptrhexaconvert(uintptr_t arg)
 {
-	int	arglenght;
+	unsigned int	arglenght;
 	char			*tmp;
 	unsigned int	i;
 
@@ -77,9 +77,9 @@ static int	ft_ptrhexaconvert(uintptr_t arg)
 	return (arglenght);
 }
 
-int	ft_pointertohexa(unsigned int arg)
+int	ft_pointertohexa(unsigned long arg)
 {
-	int	arglenght;
+	unsigned int	arglenght;
 
 	arglenght = 0;
 	arglenght += ft_putstr("0x");

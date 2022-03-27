@@ -27,9 +27,9 @@ static int	formatidentifier(char str, va_list pa)
 	if (str == 'd' || str == 'i')
 		arglenght += ft_writeitoa(va_arg(pa, int));
 	if (str == 'p')
-		arglenght += ft_pointertohexa(va_arg(pa, unsigned int));
+		arglenght += ft_pointertohexa(va_arg(pa, unsigned long));
 	if (str == 'u')
-		arglenght += ft_writeitoa(va_arg(pa, unsigned int));
+		arglenght += ft_unsigneditoa(va_arg(pa, unsigned int));
 	if (str == 'x' || str == 'X')
 		arglenght += ft_hexaconvert(va_arg(pa, unsigned int), str);
 	if (str == '%')
