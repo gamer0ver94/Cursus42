@@ -1,58 +1,66 @@
 #include "../includes/ft_printf.h"
-
-int hexaconvert(int arg)
+static int lenghtcount(unsigned int arg, unsigned int counter)
 {
-	int co = arg;
-	int i = 0;
-	int j;
-	char *remainder;
-	int arglenght;
-
-	arglenght = 0;
-	j = 0;
-	if (arg < 0)
+	counter = 0;
+	while (arg > 0)
 	{
-		write(1,"-",1);
-		arglenght++;
+		arg = arg / 16;
+		counter++;
 	}
+	return (counter);
+}
+
+char *hexastring(int i, char *tmp, unsigned int arg, char format)
+{
+	unsigned int remainder;
+
+	tmp[i] = '\0';
+	while (i > 0)
+	{
+		remainder = arg % 16;
+		if (remainder > 9)
+		{
+			if(format == 'x')
+				tmp[i - 1] = remainder + 87;
+			else
+				tmp[i - 1] = remainder + 55;
+		}
+		if(remainder <= 9)
+		{
+			tmp[i - 1] = remainder + '0';
+		}
+		arg = arg / 16;
+		i--;
+	}
+	return (tmp);
+}
+
+int ft_hexaconvert(unsigned int arg, char format)
+{
+	unsigned int arglenght;
+	char *tmp;
+	unsigned int i;
 	if(arg == 0)
 	{
-		write(1,"0",1);
-		return(1);
+		ft_putchar_fd('0',1);
+		return (1);
 	}
-
-	while(co != 0)
+	if(arg < 0)
 	{
-		co = co / 16;	
-		i++;
+		arg = arg * -1;
+		arglenght = lenghtcount(arg, arglenght);
+		arglenght++;
+		tmp = malloc(sizeof(char) * arglenght + 1);
+		tmp = hexastring(arglenght,tmp,arg, format);
+		tmp[0] = '-';
+		ft_putstr_fd(tmp,1);
+		free(tmp);
+		return (arglenght);
 	}
-	remainder = malloc(sizeof(char) * i + 1);
-	co = arg;
-	arglenght =+ i;
-	while (i != 0)
-	{
-		co = arg % 16;
-		arg = arg / 16;
-		if(co > 9)
-		{
-			remainder[j] = co + 55;
-			j++;
-			i--;
-		}
-		else
-		{
-			remainder[j] = co + 48;
-			j++;
-			i--;
-		}
-			
-	}
-	remainder[j] = '0';
-	while(j != 0)
-	{
-		write(1,&remainder[j - 1],1);
-		j--;
-	}
-	free(remainder);
+	arglenght = lenghtcount(arg, arglenght);
+	tmp = malloc(sizeof(char) * arglenght + 1);
+	tmp = hexastring(arglenght,tmp,arg, format);
+	ft_putstr_fd(tmp,1);
+	free(tmp);
 	return (arglenght);
 }

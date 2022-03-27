@@ -26,17 +26,26 @@ static int	formatidentifier(char str, va_list pa)
 	{
 		arglenght += ft_putstr(va_arg(pa, char *));
 	}
-	if (str == 'd')
-	{
-		arglenght += ft_putnbr(va_arg(pa, int));
-	}
-	if (str == 'i')
+	if (str == 'd' || str == 'i')
 	{
 		arglenght += ft_writeitoa(va_arg(pa, int));
 	}
-	if (str == 'x')
+	if (str == 'p')
 	{
-		arglenght =+ hexaconvert(va_arg(pa, int));
+		arglenght += ft_pointertohexa(va_arg(pa, unsigned int));
+	}
+	if (str =='u')
+	{
+		arglenght += ft_writeitoa(va_arg(pa,unsigned int));
+	}
+	if (str == 'x' || str == 'X')
+	{
+		arglenght =+ ft_hexaconvert(va_arg(pa, unsigned int), str);
+	}
+	if (str == '%')
+	{
+		ft_putchar_fd('%', 1);
+		arglenght++;
 	}
 	return (arglenght);
 }

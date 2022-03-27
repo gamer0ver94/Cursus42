@@ -19,8 +19,9 @@
 
 
 int ft_printf(const char *, ...);
-int hexaconvert(int arg);
+int ft_hexaconvert(unsigned int arg, char format);
 int ft_putstr(char *string);
 int	ft_putnbr(int n);
 int	ft_writeitoa(int n);
+int ft_pointertohexa(unsigned int arg);
 #endif
