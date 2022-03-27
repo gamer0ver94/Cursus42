@@ -14,7 +14,7 @@
 
 static int	formatidentifier(char str, va_list pa)
 {
-	int arglenght;
+	int	arglenght;
 
 	arglenght = 0;
 	if (str == 'c')
@@ -23,25 +23,15 @@ static int	formatidentifier(char str, va_list pa)
 		arglenght ++;
 	}
 	if (str == 's')
-	{
 		arglenght += ft_putstr(va_arg(pa, char *));
-	}
 	if (str == 'd' || str == 'i')
-	{
 		arglenght += ft_writeitoa(va_arg(pa, int));
-	}
 	if (str == 'p')
-	{
 		arglenght += ft_pointertohexa(va_arg(pa, unsigned int));
-	}
-	if (str =='u')
-	{
-		arglenght += ft_writeitoa(va_arg(pa,unsigned int));
-	}
+	if (str == 'u')
+		arglenght += ft_writeitoa(va_arg(pa, unsigned int));
 	if (str == 'x' || str == 'X')
-	{
-		arglenght =+ ft_hexaconvert(va_arg(pa, unsigned int), str);
-	}
+		arglenght += ft_hexaconvert(va_arg(pa, unsigned int), str);
 	if (str == '%')
 	{
 		ft_putchar_fd('%', 1);
@@ -52,29 +42,29 @@ static int	formatidentifier(char str, va_list pa)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list pa;
-	va_start(pa, str);
-	int i;
-	int arglenght;
+	va_list	pa;
+	int		i;
+	int		arglenght;
 
+	va_start(pa, str);
 	arglenght = 0;
 	i = 0;
 	arglenght = 0;
 	while (str[i])
 	{
-		if (str[i] == '%')		//TODO THE BONUS HERE WE NEED TO SEARCH FOR THE FLAGS BEFORE THE FORMAT IDENTIFIER
+		if (str[i] == '%')
 		{
 			arglenght += formatidentifier(str[i + 1], pa);
 			i++;
 		}
 		else
 		{
-			printf("%c",str[i]);
+			ft_putchar_fd(str[i], 1);
 			arglenght++;
 		}
 		i++;
 	}
 	va_end(pa);
-	return(arglenght);
+	return (arglenght);
 }
 
