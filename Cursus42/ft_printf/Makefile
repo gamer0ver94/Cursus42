@@ -6,7 +6,6 @@ LIBFT = ../libft
 SRCS =	srcs/ft_printf.c\
 		srcs/ft_hexaconvert.c\
 		srcs/ft_putstr.c\
-		srcs/ft_putnbr.c\
 		srcs/ft_writeitoa.c\
 		srcs/ft_pointertohexa.c\
 		srcs/ft_unsigneditoa.c

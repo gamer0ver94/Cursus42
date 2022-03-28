@@ -1,18 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unsigneditoa.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 10:05:07 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/03/28 10:05:07 by dpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
-static char	*convert(char *str,unsigned int counted, unsigned int n)
+static char	*convert(char *str, unsigned int counted, unsigned int n)
 {
-	if (n == -2147483648)
-	{	
-		n = -147483648;
-		str[1] = '2';
-	}
 	str[counted] = '\0';
-	if (n < 0)
-	{
-		str[0] = '-';
-		n = n * -1;
-	}
 	if (n == 0)
 		str[0] = '0';
 	while (n > 0)
@@ -29,18 +31,9 @@ static int	digitcount(unsigned int n)
 	int	count;
 
 	count = 0;
-	if (n == -2147483648)
-	{
-		return (11);
-	}
 	if (n == 0)
 	{
 		return (1);
-	}
-	if (n < 0)
-	{
-		count++;
-		n = n * (-1);
 	}
 	while (n > 0)
 	{

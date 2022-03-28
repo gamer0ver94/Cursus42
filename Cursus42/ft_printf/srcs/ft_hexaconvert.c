@@ -52,7 +52,6 @@ int	ft_hexaconvert(unsigned int arg, char format)
 {
 	unsigned int	arglenght;
 	char			*tmp;
-	unsigned int	i;
 
 	if (arg == 0)
 	{
@@ -62,8 +61,7 @@ int	ft_hexaconvert(unsigned int arg, char format)
 	if (arg < 0)
 	{
 		arg = arg * -1;
-		arglenght = lenghtcount(arg, arglenght);
-		arglenght++;
+		arglenght = lenghtcount(arg, arglenght) + 1;
 		tmp = malloc(sizeof(char) * arglenght + 1);
 		tmp = hexastring(arglenght, tmp, arg, format);
 		tmp[0] = '-';

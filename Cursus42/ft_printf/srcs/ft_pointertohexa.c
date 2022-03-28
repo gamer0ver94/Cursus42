@@ -50,7 +50,6 @@ static int	ft_ptrhexaconvert(uintptr_t arg)
 {
 	unsigned int	arglenght;
 	char			*tmp;
-	unsigned int	i;
 
 	if (arg == 0)
 	{
@@ -60,8 +59,7 @@ static int	ft_ptrhexaconvert(uintptr_t arg)
 	if (arg < 0)
 	{
 		arg = arg * -1;
-		arglenght = ptrlenghtcount(arg, arglenght);
-		arglenght++;
+		arglenght = ptrlenghtcount(arg, arglenght) + 1;
 		tmp = malloc(sizeof(char) * arglenght + 1);
 		tmp = ptrhexastring(arglenght, tmp, arg);
 		tmp[0] = '-';
