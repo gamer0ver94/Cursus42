@@ -6,7 +6,7 @@
 int	main(void)
 {
 	int file;
-	char	buffer[40];
+	//char	buffer[40];
 
 	file = open("testing.txt", O_RDONLY);
 	get_next_line(file);
