@@ -5,5 +5,7 @@
 #include <string.h>
 
 char	*get_next_line(int fd);
-
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin(char *s1, char *s2);
+int verifybuffer(char *buffer);
 #endif

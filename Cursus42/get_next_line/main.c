@@ -6,9 +6,15 @@
 int	main(void)
 {
 	int file;
-	//char	buffer[40];
-
+	int i = 0;
+	char *a;
 	file = open("testing.txt", O_RDONLY);
-	get_next_line(file);
+	while(i < 12)
+	{
+		a = get_next_line(file);
+		printf("%s\n",a);
+		free(a);
+		i++;
+	}
 	return (0);
 }

@@ -1,71 +1,108 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/30 08:48:19 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/03/30 08:48:19 by dpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
-#include "stdio.h"
-// char *verify_line()
-// {
+#include "stdio.h" //delete after
 
-// }
-
-// char *alocmemory()
-// {
-
-// }
-
-char *save_buffer(char *buffer, size_t nbytes)
+char *get_remaining(char *stash)
 {
-	char *str;
-	char *str2;
-	static int linesize;
-
-	str = NULL;
-	str2 = NULL;
-	linesize +=nbytes;
-	printf("sd");
-	if(!str)
+	char *remaining;
+	int i;
+	int j;
+	i = 0;
+	j = 0;
+	while(stash[i] && stash[i] != '\n')
 	{
-		str = malloc(sizeof(char) * linesize + 1);
-		strcpy(str,buffer);
-		if(str2)
-		{
-			strcpy(str,str2);
-			strcat(str,buffer);
-			free(str2);
-		}
-		printf("%s",str);
-		return(str);
+		i++;
 	}
-	else
+	if(!stash[i])
 	{
-		str2 = malloc(sizeof(char) * linesize + 1);
-		strcpy(str2,str);
-		strcat(str2,buffer);
-		free(str);
-		return(str2);
-		printf("%s",str2);
+		free(stash);
+		return (NULL);
 	}
+	remaining = malloc(sizeof(char) * (ft_strlen(stash) - i) + 1);
+	if (!remaining)
+	{	
+		return (0);
+	}
+	while (stash[i + j])
+	{
+		remaining[j] = stash[i + j + 1];
+		j++;
+	}
+	remaining[j] = '\0';
+	free(stash);
+	return (remaining);
 }
-// char *read_line(int fd, char *buffer, size_t nbytes, char *save)
-// {
-	
-// }
+
+char *get_line(char *stash)
+{
+	char *line;
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (stash [i] && stash[i] != '\n')
+	{
+		i++;
+	}
+	line = malloc(sizeof(char) * i + 1);
+	if (!line)
+		return (NULL);
+	while(j != i)
+	{
+		line[j] = stash[j];
+		j++;
+	}
+	line[j] = '\0';
+	return(line);
+}
+
+char *read_nbytes(int fd, char *stash)
+{
+	char *buffer;
+	int reader;
+
+	reader = 1;
+	buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
+	if (!buffer)
+		return(NULL);
+	while (verifybuffer(buffer) != 1 && reader != 0)
+	{
+		reader = read(fd, buffer, BUFFER_SIZE);
+		if (reader == -1)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		buffer[reader] = '\0';
+		stash = ft_strjoin(stash, buffer);
+	}
+	free(buffer);
+	return(stash);
+}
 
 char	*get_next_line(int fd)
 {
-	char buffer[5];
-	size_t nbytes;
-	int reader;
-
-	nbytes = 1;
-	reader = 1;
-	printf("fsa");
-	while(reader != 0)
+	char *line;
+	static char *stash;
+	
+	if(fd < 0 || BUFFER_SIZE <= 0)
 	{
-		reader = read(fd,buffer,nbytes);
-			if(reader == 0)
-			{
-				return (0);
-			}
-		// save_buffer(buffer,nbytes);
+		return (NULL);
 	}
-	return ("buffer");
-
+	stash = read_nbytes(fd, stash);
+	line = get_line(stash);
+	stash = get_remaining(stash);
+	return (line);
 }
