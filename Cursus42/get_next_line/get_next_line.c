@@ -13,27 +13,23 @@
 #include "get_next_line.h"
 #include "stdio.h" //delete after
 
-char *get_remaining(char *stash)
+char	*get_remaining(char *stash)
 {
-	char *remaining;
-	int i;
-	int j;
+	char	*remaining;
+	int		i;
+	int		j;
+
 	i = 0;
 	j = 0;
-	while(stash[i] && stash[i] != '\n')
-	{
+	while (stash && stash[i] && stash[i] != '\n')
 		i++;
-	}
-	if(!stash[i])
+	if (!stash)
 	{
-		free(stash);
 		return (NULL);
 	}
 	remaining = malloc(sizeof(char) * (ft_strlen(stash) - i) + 1);
 	if (!remaining)
-	{	
 		return (0);
-	}
 	while (stash[i + j])
 	{
 		remaining[j] = stash[i + j + 1];
@@ -44,43 +40,46 @@ char *get_remaining(char *stash)
 	return (remaining);
 }
 
-char *get_line(char *stash)
+char	*get_line(char *stash)
 {
-	char *line;
-	int i;
-	int j;
+	char	*line;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	while (stash [i] && stash[i] != '\n')
+	while (stash && stash[i] && stash[i] != '\n')
 	{
 		i++;
 	}
 	line = malloc(sizeof(char) * i + 1);
-	if (!line)
+	if (!stash && i == 0)
+	{
+		free (line);
 		return (NULL);
-	while(j != i)
+	}
+	while (j != i)
 	{
 		line[j] = stash[j];
 		j++;
 	}
 	line[j] = '\0';
-	return(line);
+	return (line);
 }
 
-char *read_nbytes(int fd, char *stash)
+char	*read_nbytes(int fd, char *stash)
 {
-	char *buffer;
-	int reader;
+	char	*buffer;
+	int		reader;
 
 	reader = 1;
 	buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buffer)
-		return(NULL);
+		return (NULL);
 	while (verifybuffer(buffer) != 1 && reader != 0)
 	{
 		reader = read(fd, buffer, BUFFER_SIZE);
-		if (reader == -1)
+		if (reader == -1 || reader == 0)
 		{
 			free(buffer);
 			return (NULL);
@@ -89,15 +88,15 @@ char *read_nbytes(int fd, char *stash)
 		stash = ft_strjoin(stash, buffer);
 	}
 	free(buffer);
-	return(stash);
+	return (stash);
 }
 
 char	*get_next_line(int fd)
 {
-	char *line;
-	static char *stash;
-	
-	if(fd < 0 || BUFFER_SIZE <= 0)
+	char		*line;
+	static char	*stash;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		return (NULL);
 	}

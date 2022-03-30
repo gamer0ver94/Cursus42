@@ -24,7 +24,6 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*newstr;
@@ -32,7 +31,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	i;
 
 	i = 0;
-	if(!s1)
+	if (!s1)
 	{
 		s1 = (char *)malloc(sizeof(char) * 1);
 		s1[0] = '\0';
@@ -59,16 +58,16 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (newstr);
 }
 
-int verifybuffer(char *buffer)
+int	verifybuffer(char *buffer)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (buffer[i])
 	{
-		if(buffer[i] == '\n')
+		if (buffer[i] == '\n')
 		{
-			return(1);
+			return (1);
 		}
 		i++;
 	}

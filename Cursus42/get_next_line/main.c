@@ -9,10 +9,10 @@ int	main(void)
 	int i = 0;
 	char *a;
 	file = open("testing.txt", O_RDONLY);
-	while(i < 12)
+	while(i < 2)
 	{
 		a = get_next_line(file);
-		printf("%s\n",a);
+		printf("|%s|\n",a);
 		free(a);
 		i++;
 	}
