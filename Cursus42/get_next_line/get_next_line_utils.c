@@ -58,18 +58,19 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (newstr);
 }
 
-int	verifybuffer(char *buffer)
+char	*verifybuffer(char *str, int c)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (buffer[i])
+	while (str[i] != (unsigned char)c && str[i])
 	{
-		if (buffer[i] == '\n')
-		{
-			return (1);
-		}
 		i++;
 	}
-	return (0);
+	if (str[i] == (unsigned char)c)
+	{
+		return ((char *)str + i);
+	}
+	return (NULL);
 }
+
