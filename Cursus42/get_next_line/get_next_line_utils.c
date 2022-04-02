@@ -73,4 +73,3 @@ char	*verifybuffer(char *str, int c)
 	}
 	return (NULL);
 }
-

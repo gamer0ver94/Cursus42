@@ -13,9 +13,6 @@
 #include "get_next_line.h"
 #include "stdio.h" //delete after
 
-
-
-
 char	*ft_strchr(char *s, int c)
 {
 	int	i;
@@ -41,7 +38,6 @@ char	*get_remaining(char *stash)
 	int		j;
 
 	i = 0;
-	
 	while (stash[i] && stash[i] != '\n')
 		i++;
 	if (!stash[i])
@@ -49,7 +45,7 @@ char	*get_remaining(char *stash)
 		free(stash);
 		return (NULL);
 	}
-	remaining = malloc(sizeof(char) * (ft_strlen(stash) - i + 1));
+	remaining = malloc(sizeof(char) * ((ft_strlen(stash) - i) + 1));
 	if (!remaining)
 		return (0);
 	i++;
@@ -76,11 +72,11 @@ char	*get_line(char *stash)
 		return (NULL);
 	}
 	while (stash[i] && stash[i] != '\n')
-	{
 		i++;
-	}
-	line = malloc(sizeof(char) * (i + 2));
-	if(!line)
+	if (stash[i] && stash[i] == '\n')
+		i++;
+	line = malloc(sizeof(char) * (i + 1));
+	if (!line)
 		return (NULL);
 	i = 0;
 	while (stash[i] && stash[i] != '\n')
@@ -88,7 +84,7 @@ char	*get_line(char *stash)
 		line[i] = stash[i];
 		i++;
 	}
-	if(stash[i] == '\n')
+	if (stash[i] == '\n')
 	{
 		line[i] = stash[i];
 		i++;
