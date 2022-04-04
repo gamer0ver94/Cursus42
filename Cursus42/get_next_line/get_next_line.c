@@ -105,6 +105,7 @@ char	*read_nbytes(int fd, char *stash)
 	while (!verifybuffer(buffer,'\n') && reader != 0)
 	{
 		reader = read(fd, buffer, BUFFER_SIZE);
+		printf("buffer is|%s|",buffer);
 		if (reader == -1)
 		{
 			free(buffer);
@@ -124,11 +125,15 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
+		printf("returned");
 		return (NULL);
 	}
 	stash = read_nbytes(fd, stash);
 	if(!stash)
+	{
+		printf("returnerd");
 		return (NULL);
+	}
 	line = get_line(stash);
 	stash = get_remaining(stash);
 	return (line);

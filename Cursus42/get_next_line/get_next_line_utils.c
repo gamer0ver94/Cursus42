@@ -34,12 +34,12 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1)
 	{
 		s1 = (char *)malloc(sizeof(char) * 1);
-		s1[0] = '\0';
+		s1[i] = '\0';
 	}
 	if (!s1 || !s2)
 		return (0);
-	lenght = ft_strlen(s1) + ft_strlen(s2) + 1;
-	newstr = (char *)malloc(sizeof(char) * lenght);
+	lenght = ft_strlen(s1) + ft_strlen(s2);
+	newstr = (char *)malloc(sizeof(char) * lenght + 1);
 	if (!newstr)
 		return (NULL);
 	while (i < ft_strlen(s1))
@@ -53,7 +53,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		newstr[ft_strlen(s1) + i] = s2[i];
 		i++;
 	}
-	newstr[lenght - 1] = '\0';
+	newstr[lenght] = '\0';
 	free(s1);
 	return (newstr);
 }

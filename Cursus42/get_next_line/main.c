@@ -7,13 +7,11 @@ int	main(void)
 {
 	int file;
 	int i = 0;
-	char *a;
 	file = open("testing.txt", O_RDONLY);
 	while(i < 2)
 	{
-		a = get_next_line(file);
-		printf("|%s|\n",a);
-		free(a);
+		printf("line %d |%s|\n", i + 1 ,get_next_line(file));
+		// get_next_line(file);
 		i++;
 	}
 	return (0);
