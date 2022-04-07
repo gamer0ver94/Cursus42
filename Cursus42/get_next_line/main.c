@@ -7,7 +7,7 @@ int	main(void)
 {
 	int file;
 	int i = 0;
-	file = open("testing.txt", O_RDONLY);
+	file = open("big_line_no_nl", O_RDONLY);
 	while(i < 2)
 	{
 		printf("line %d |%s|\n", i + 1 ,get_next_line(file));

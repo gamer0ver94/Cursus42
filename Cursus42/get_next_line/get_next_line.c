@@ -102,10 +102,9 @@ char	*read_nbytes(int fd, char *stash)
 	buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
-	while (!verifybuffer(buffer,'\n') && reader != 0)
+	while (!verifybuffer(buffer, '\n') && reader != 0)
 	{
 		reader = read(fd, buffer, BUFFER_SIZE);
-		printf("buffer is|%s|",buffer);
 		if (reader == -1)
 		{
 			free(buffer);
@@ -124,16 +123,10 @@ char	*get_next_line(int fd)
 	static char	*stash;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-	{
-		printf("returned");
 		return (NULL);
-	}
 	stash = read_nbytes(fd, stash);
-	if(!stash)
-	{
-		printf("returnerd");
+	if (!stash)
 		return (NULL);
-	}
 	line = get_line(stash);
 	stash = get_remaining(stash);
 	return (line);
