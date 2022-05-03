@@ -17,7 +17,8 @@
 # include <string.h>
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char *s1, char *s2);
-char	*verifybuffer(char *str, int c);
+int		ft_strlen(char *str);
+char	*ft_strjoin(char *stash, char *buffer);
+char	*read_line(int fd);
+int		get_line_return(char *buffer, char n);
 #endif

@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 08:48:00 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/30 08:48:00 by dpaulino         ###   ########.fr       */
+/*   Created: 2022/05/03 16:48:14 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/05/03 18:51:00 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -24,52 +25,46 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *stash, char *buffer)
 {
-	char	*newstr;
-	int		lenght;
-	size_t	i;
+	char	*str;
+	int		i;
+	int		j;
+	int		str_len;
 
+	printf("%d", ft_strlen(stash));
+	str_len = ft_strlen(stash) + ft_strlen(buffer);
+	j = 0;
 	i = 0;
-	if (!s1)
+	str = malloc(sizeof(char) * str_len + 1);
+	while (stash[i])
 	{
-		s1 = (char *)malloc(sizeof(char) * 1);
-		s1[i] = '\0';
-	}
-	if (!s1 || !s2)
-		return (0);
-	lenght = ft_strlen(s1) + ft_strlen(s2);
-	newstr = (char *)malloc(sizeof(char) * lenght + 1);
-	if (!newstr)
-		return (NULL);
-	while (i < ft_strlen(s1))
-	{
-		newstr[i] = s1[i];
+		str[j] = stash[i];
+		j++;
 		i++;
 	}
 	i = 0;
-	while (i < ft_strlen(s2))
+	while (buffer[i])
 	{
-		newstr[ft_strlen(s1) + i] = s2[i];
+		str[j] = buffer[i];
+		j++;
 		i++;
 	}
-	newstr[lenght] = '\0';
-	free(s1);
-	return (newstr);
+	str[str_len] = '\0';
+	free(stash);
+	return (str);
 }
 
-char	*verifybuffer(char *str, int c)
+int	get_line_return(char *buffer, char n)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (str[i] != (unsigned char)c && str[i])
+	while (buffer[i])
 	{
+		if (buffer[i] == n)
+			return (1);
 		i++;
 	}
-	if (str[i] == (unsigned char)c)
-	{
-		return ((char *)str + i);
-	}
-	return (NULL);
+	return (0);
 }
