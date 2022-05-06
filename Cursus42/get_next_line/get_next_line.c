@@ -12,6 +12,18 @@
 
 #include "get_next_line.h"
 
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
 char	*get_remaining(char *stash)
 {
 	char	*remaining;
@@ -26,7 +38,7 @@ char	*get_remaining(char *stash)
 		free(stash);
 		return (NULL);
 	}
-	remaining = ft_calloc((ft_strlen(stash) - i + 1), sizeof(char));;
+	remaining = ft_calloc((ft_strlen(stash) - i + 1), sizeof(char));
 	i++;
 	if (!stash)
 		return (NULL);
@@ -71,7 +83,7 @@ char	*read_nbytes(int fd, char *stash)
 	int		reader;
 
 	reader = 1;
-	if(!stash)
+	if (!stash)
 		stash = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buffer)
@@ -86,7 +98,7 @@ char	*read_nbytes(int fd, char *stash)
 		}
 		buffer[reader] = '\0';
 		stash = ft_clean(stash, buffer);
-		if(verify_buffer(buffer, '\n') == 1 )
+		if (verify_buffer(buffer, '\n') == 1)
 			reader = 0;
 	}
 	free(buffer);
@@ -98,7 +110,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*stash;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd,0,0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
 	stash = read_nbytes(fd, stash);
 	if (!stash)

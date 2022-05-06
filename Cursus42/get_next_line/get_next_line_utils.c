@@ -37,18 +37,6 @@ void	*ft_calloc(size_t counter, size_t size)
 	return (res);
 }
 
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*newstr;
@@ -101,4 +89,3 @@ int	verify_buffer(char *str, char c)
 	}
 	return (0);
 }
-
