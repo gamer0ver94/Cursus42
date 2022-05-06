@@ -5,15 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 16:48:14 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/03 18:51:00 by dpaulino         ###   ########.fr       */
+/*   Created: 2022/03/30 08:48:00 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/03/30 08:48:00 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_bzero(void *s, size_t n)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
+}
+
+void	*ft_calloc(size_t counter, size_t size)
+{
+	char	*res;
+
+	res = malloc(size * counter);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, size * counter);
+	return (res);
+}
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -25,46 +49,56 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *stash, char *buffer)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*str;
+	char	*newstr;
+	int		lenght;
 	int		i;
 	int		j;
-	int		str_len;
 
-	printf("%d", ft_strlen(stash));
-	str_len = ft_strlen(stash) + ft_strlen(buffer);
+	i = 0;
+	lenght = ft_strlen(s1) + ft_strlen(s2);
+	newstr = (char *)malloc(sizeof(char) * lenght + 1);
+	if (!s1 || !s2 || !newstr)
+		return (NULL);
+	while (s1[i] != '\0')
+	{
+		newstr[i] = s1[i];
+		i++;
+	}
 	j = 0;
-	i = 0;
-	str = malloc(sizeof(char) * str_len + 1);
-	while (stash[i])
+	while (s2[j] != '\0')
 	{
-		str[j] = stash[i];
-		j++;
+		newstr[i] = s2[j];
 		i++;
-	}
-	i = 0;
-	while (buffer[i])
-	{
-		str[j] = buffer[i];
 		j++;
-		i++;
 	}
-	str[str_len] = '\0';
-	free(stash);
-	return (str);
+	newstr[lenght] = '\0';
+	return (newstr);
 }
 
-int	get_line_return(char *buffer, char n)
+char	*ft_free(char *buffer, char *buf)
 {
-	int	i;
+	char	*temp;
+
+	temp = ft_strjoin(buffer, buf);
+	free(buffer);
+	return (temp);
+}
+
+int	verify_buffer(char *str, char c)
+{
+	unsigned int	i;
 
 	i = 0;
-	while (buffer[i])
+	while (str[i])
 	{
-		if (buffer[i] == n)
+		if (str[i] == c)
+		{
 			return (1);
+		}
 		i++;
 	}
 	return (0);
 }
+

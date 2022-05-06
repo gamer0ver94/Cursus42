@@ -17,8 +17,10 @@
 # include <string.h>
 
 char	*get_next_line(int fd);
-int		ft_strlen(char *str);
-char	*ft_strjoin(char *stash, char *buffer);
-char	*read_line(int fd);
-int		get_line_return(char *buffer, char n);
+size_t		ft_strlen(const char *str);
+char	*ft_strjoin(char *s1, char *s2);
+int		verify_buffer(char *str, char c);
+char	*ft_free(char *buffer, char *buff);
+void	*ft_calloc(size_t counter, size_t size);
+void	ft_bzero(void *s, size_t n);
 #endif
