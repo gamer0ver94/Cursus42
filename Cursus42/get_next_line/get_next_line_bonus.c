@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 08:48:19 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/03/30 08:48:19 by dpaulino         ###   ########.fr       */
+/*   Created: 2022/05/06 14:03:35 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/05/06 14:03:35 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,14 @@ char	*read_nbytes(int fd, char *stash)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stash;
+	static char	*stash[4024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd,0,0) < 0)
 		return (NULL);
-	stash = read_nbytes(fd, stash);
-	if (!stash)
+	stash[fd] = read_nbytes(fd, stash[fd]);
+	if (!stash[fd])
 		return (NULL);
-	line = get_line(stash);
-	stash = get_remaining(stash);
+	line = get_line(stash[fd]);
+	stash[fd] = get_remaining(stash[fd]);
 	return (line);
 }
