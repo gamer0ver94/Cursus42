@@ -1,0 +1,22 @@
+-Verify that arg map is given,if not display an error and exit program.
+
+-Create map by opening the arg "map.ber" and storing each line in a 2d array using get_next_line.
+
+-Give map struct the correct data to work with.
+
+-Verify that map is rect comparing each line untill find a diferent size and also verify that map have coins, play, walls,exit and enemies.
+
+-Verify the position of the player on the map by looking for each caracter of the map for the leter P.
+
+-Now i can initialize a window.
+
+-After the window i can initilize the images (assets) using mlx_xmp_file_to_image.
+
+-Now the i initialized the images, i can look into each caracter of each line and place the image incrementing the position with the image size so the images stay right next to each other and not overlaping.
+
+-Ok, now we need to create a loop that we use to call fps(frames per second), that means we are going to use some mlx functions to loop while the program is opening
+this means that the functions will probably running our render and cleaning the window every time so we can see some moviments if needed.
+
+- Between the loop we creating some key functions that will change the data on the map betwen each loop after clicking a key
+
+-now i can clean my  mess destroying everything ive done.

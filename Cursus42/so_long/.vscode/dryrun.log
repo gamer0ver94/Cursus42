@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/gameoverstation/Documents/Cursus42/Cursus42/so_long'
+make: 'so_long' is up to date.
+make: Leaving directory '/home/gameoverstation/Documents/Cursus42/Cursus42/so_long'
+ 
