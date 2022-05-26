@@ -6,7 +6,7 @@
 #    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/05/23 23:47:16 by dpaulino         ###   ########.fr        #
+#    Updated: 2022/05/26 18:03:43 by dpaulino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ OBJS			=	${SRCS:.c=.o}
 
 LD_FLAGS		=	-L libft -L mlx
 
-MLX_FLAGS		=	 -lmlx -lXext -lX11
+# MLX_FLAGS		=	 -lmlx -lXext -lX11
+MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 LIBFT_FLAGS		=	-lft
 
@@ -30,14 +31,14 @@ CFLAGS			=	-Wall -Werror -Wextra
 
 $(NAME)			:	${OBJS}
 					make -C libft
-					make -C minilibx-linux
+					# make -C minilibx-linux
 					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS} ${MLX_FLAGS}
 
 all				:	${NAME}
 
 clean			:
 					make clean -C libft
-					make clean -C minilibx-linux
+					# make clean -C minilibx-linux
 					rm -rf ${OBJS}
 
 fclean			:	clean
