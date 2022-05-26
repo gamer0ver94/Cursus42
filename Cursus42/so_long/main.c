@@ -1,25 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 23:46:31 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/05/23 23:46:32 by dpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/so_long.h"
 
 int main(int argc, char **argv)
 {
     t_data data;
-
-    data.image.width = IMG_SIZE;
-    data.image.height = IMG_SIZE * 0;
-    data.map.path = "maps/map1.ber";
     
     if(argc != 2)
     {
         
-        printf("This Program need at least one argument\n");
+        printf("This Program need exactly one argument\n");
         return (0);
     }
     if(argv[1])
     {
-        read_map(&data);
-        create_new_window(&data);
-        key_events(&data);
-        map_rendering(&data);
+        s_initialization(&data, argv[1]);
+        read_map(&data, argv[1]);
+        player_position(&data);
+        enemy_position(&data);
+        new_window(&data);
+        graphics_render(&data);
+        keys_event(&data);
     }
     return(0);
 }

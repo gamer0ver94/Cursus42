@@ -20,3 +20,19 @@ this means that the functions will probably running our render and cleaning the 
 - Between the loop we creating some key functions that will change the data on the map betwen each loop after clicking a key
 
 -now i can clean my  mess destroying everything ive done.
+
+
+
+
+
+
+To fix
+verify that there is only one arg for the map   **check**
+verify that there is no more then one player
+verify that the map is rectagular
+create enemy that moves
+create coins to catch
+verify that coins have been colected so we can exit
+create a score board
+print steps
+create maps

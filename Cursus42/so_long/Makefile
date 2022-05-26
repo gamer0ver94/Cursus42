@@ -1,8 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
+#    Updated: 2022/05/23 23:47:16 by dpaulino         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME			=	so_long
 
-SRCS			=	main.c srcs/create_new_window.c srcs/get_next_line.c\
-srcs/get_next_line_utils.c srcs/key_events.c\
-srcs/map_rendering.c srcs/read_map.c 
+SRCS			=	main.c srcs/get_next_line.c srcs/s_initialization.c srcs/get_next_line_utils.c \
+					srcs/debugger.c srcs/read_map.c srcs/new_window.c srcs/keys_event.c \
+					srcs/frame_engine.c srcs/player_position.c srcs/graphics_render.c srcs/enemy_move.c \
+					srcs/enemy_position.c
 OBJS			=	${SRCS:.c=.o}
 
 LD_FLAGS		=	-L libft -L mlx
@@ -10,8 +23,6 @@ LD_FLAGS		=	-L libft -L mlx
 MLX_FLAGS		=	 -lmlx -lXext -lX11
 
 LIBFT_FLAGS		=	-lft
-
-# HEAD			=	-I includes -I libft -I minilibx-linux
 
 CC				=	gcc -g
 

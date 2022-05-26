@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 23:47:33 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/05/23 23:47:34 by dpaulino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 #endif
@@ -19,10 +31,28 @@
 # define WALL "assets/wall.xpm"
 # define FLOOR "assets/floor.xpm"
 # define PLAYER "assets/player.xpm"
-# define IMG_SIZE 60
+# define COIN "assets/coin.xpm"
+# define ENEMY "assets/enemy.xpm"
+# define EXIT1 "assets/exit1.xpm"
+# define EXIT2 "assets/exit2.xpm"
+# define GAME_MENU "assets/game_menu.xpm"
+# define IMG_SIZE 100
+# define W 119
+# define S 115
+# define D 100
+# define A 97
+# define ESC 27
+#define ENEMY_SPEED 150
 
-int    create_new_window(t_data *data);
-int   key_events(t_data *data);
-int kill_window(t_data *data);
-void    map_rendering(t_data *data);
-void read_map(t_data *data);
+
+void	s_initialization(t_data *data, char *argv);
+void	read_map(t_data *data, char *argv);
+void	new_window(t_data *data);
+void	debugger(t_data    *data);
+void	keys_event(t_data *data);
+void	frame_engine(t_data *data, int key);
+void	player_position(t_data *data);
+void    enemy_position(t_data *data);
+int		graphics_render(t_data *data);
+int	enemy_moves(t_data *data);
+

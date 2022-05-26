@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 23 02:28:51 2022
+# Make data base, printed on Thu May 26 16:37:54 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c57cac09-5203-4260-877c-04370aa8b71f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9cc46526-4a26-4fb0-b498-709f3888d857.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -63,7 +63,7 @@ VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/c3511e6c6
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.I3YIM1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.5CDCM1
 # default
 .LOADED := 
 # default
@@ -78,8 +78,8 @@ VSCODE_PIPE_LOGGING = true
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
-# makefile (from 'Makefile', line 3)
-SRCS = main.c srcs/create_new_window.c srcs/get_next_line.c srcs/get_next_line_utils.c srcs/key_events.c srcs/map_rendering.c srcs/read_map.c 
+# makefile (from 'Makefile', line 15)
+SRCS = main.c srcs/get_next_line.c srcs/s_initialization.c srcs/get_next_line_utils.c srcs/debugger.c srcs/read_map.c srcs/new_window.c srcs/keys_event.c srcs/frame_engine.c srcs/player_position.c srcs/graphics_render.c srcs/enemy_move.c srcs/enemy_position.c
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -105,7 +105,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2672
+VSCODE_PID = 4103
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -113,7 +113,7 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1449,unix/GameoverStation:/tmp/.ICE-unix/1449
+SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1522,unix/GameoverStation:/tmp/.ICE-unix/1522
 # automatic
 *F = $(notdir $*)
 # environment
@@ -126,7 +126,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 6)
+# makefile (from 'Makefile', line 19)
 OBJS = ${SRCS:.c=.o}
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
@@ -158,14 +158,14 @@ LC_MONETARY = fr_FR.UTF-8
 ^F = $(notdir $^)
 # environment
 SNAP_USER_COMMON = /home/gameoverstation/snap/code/common
-# makefile (from 'Makefile', line 10)
+# makefile (from 'Makefile', line 23)
 MLX_FLAGS = -lmlx -lXext -lX11
 # environment
 LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/97
 # environment
-INVOCATION_ID = 916f54bbf0c746a9b48ae64cace6d0b4
+INVOCATION_ID = b30c555249fe41fda3a38330ffa0f423
 # environment
 SNAP_REVISION = 97
 # environment
@@ -182,7 +182,7 @@ LC_TELEPHONE = fr_FR.UTF-8
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
 ?F = $(notdir $?)
-# makefile (from 'Makefile', line 1)
+# makefile (from 'Makefile', line 13)
 NAME = so_long
 # environment
 XDG_CURRENT_DESKTOP = Unity
@@ -205,7 +205,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := so_long
 # environment
-SYSTEMD_EXEC_PID = 1471
+SYSTEMD_EXEC_PID = 1544
 # environment
 DISPLAY = :0
 # environment
@@ -221,23 +221,23 @@ SNAP_DATA = /var/snap/code/97
 # environment
 SNAP_CONTEXT = xnVtywYhVzLT5l3wcpMSoDl0XhgIJgpIxKPOfm_YdIO8IvxZwekZ
 # environment
-MANAGERPID = 1301
+MANAGERPID = 1359
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2630
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4058
 # environment
 _ = /snap/code/97/usr/share/code/code
 # environment
 LC_PAPER = fr_FR.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'Makefile', line 18)
+# makefile (from 'Makefile', line 29)
 CFLAGS = -Wall -Werror -Wextra
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/gameoverstation/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:42432
+JOURNAL_STREAM = 8:45495
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -254,7 +254,7 @@ VSCODE_IPC_HOOK = /run/user/1000/vscode-db09aeac-1.67.2-main.sock
 SNAP_NAME = code
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
-# makefile (from 'Makefile', line 12)
+# makefile (from 'Makefile', line 25)
 LIBFT_FLAGS = -lft
 # environment
 IM_CONFIG_PHASE = 1
@@ -274,13 +274,13 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# makefile (from 'Makefile', line 16)
+# makefile (from 'Makefile', line 27)
 CC = gcc -g
 # environment
 SNAP_USER_DATA = /home/gameoverstation/snap/code/97
 # environment
 XDG_MENU_PREFIX = gnome-
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 21)
 LD_FLAGS = -L libft -L mlx
 # environment
 GDMSESSION = ubuntu
@@ -308,26 +308,47 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Files
 
 # Not a target:
-srcs/map_rendering.o:
+srcs/graphics_render.o:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-05-23 02:27:47.413135843
+#  Last modified 2022-05-26 04:10:56.457524548
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/new_window.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-26 04:10:56.369523487
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/s_initialization.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-26 04:10:56.281522424
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 02:27:45.165118848
+ 
+#  Last modified 2022-05-25 17:21:58.542166467
 #  File has been updated.
 #  Successfully updated.
 
-so_long: main.o srcs/create_new_window.o srcs/get_next_line.o srcs/get_next_line_utils.o srcs/key_events.o srcs/map_rendering.o srcs/read_map.o
-#  Implicit rule search has not been done.
-#  Last modified 2022-05-23 02:27:49.269149869
+# Not a target:
+srcs/frame_engine.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-26 04:10:56.413524016
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 21):
+
+so_long: main.o srcs/get_next_line.o srcs/s_initialization.o srcs/get_next_line_utils.o srcs/debugger.o srcs/read_map.o srcs/new_window.o srcs/keys_event.o srcs/frame_engine.o srcs/player_position.o srcs/graphics_render.o srcs/enemy_move.o srcs/enemy_position.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-26 04:10:58.337547236
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 32):
 					make -C libft
 					make -C minilibx-linux
 					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS} ${MLX_FLAGS}
@@ -335,7 +356,7 @@ so_long: main.o srcs/create_new_window.o srcs/get_next_line.o srcs/get_next_line
 # Not a target:
 srcs/get_next_line_utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 02:27:47.377135571
+#  Last modified 2022-05-26 04:10:56.305522713
 #  File has been updated.
 #  Successfully updated.
 
@@ -344,22 +365,15 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
+#  recipe to execute (from 'Makefile', line 39):
 					make clean -C libft
 					make clean -C minilibx-linux
 					rm -rf ${OBJS}
 
 # Not a target:
-srcs/create_new_window.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-23 02:27:47.333135239
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
 srcs/get_next_line.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 02:27:47.353135389
+#  Last modified 2022-05-26 04:10:56.261522182
 #  File has been updated.
 #  Successfully updated.
 
@@ -368,6 +382,13 @@ re: fclean all
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+
+# Not a target:
+srcs/player_position.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-26 04:10:56.433524258
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -388,28 +409,42 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
+#  recipe to execute (from 'Makefile', line 44):
 					make fclean -C libft
 					rm -rf ${NAME}
 
 # Not a target:
+srcs/keys_event.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-26 04:10:56.389523727
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 srcs/read_map.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 02:27:47.437136025
+#  Last modified 2022-05-26 04:10:56.349523245
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 02:27:47.313135087
+#  Last modified 2022-05-26 04:10:56.237521892
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-srcs/key_events.o:
+srcs/enemy_move.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 02:27:47.397135723
+#  Last modified 2022-05-26 04:10:56.47752479
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/enemy_position.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-26 04:10:56.501525079
 #  File has been updated.
 #  Successfully updated.
 
@@ -418,20 +453,27 @@ srcs/key_events.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+srcs/debugger.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-26 04:10:56.325522955
+#  File has been updated.
+#  Successfully updated.
+
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/42=0%
+# Load=22/1024=2%, Rehash=0, Collisions=0/54=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 314 B / avg = 10 B
-# current buf: size = 8162 B / used = 314 B / count = 30 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 432 B / avg = 12 B
+# current buf: size = 8162 B / used = 432 B / count = 36 / avg = 12 B
 
-# strcache performance: lookups = 51 / hit rate = 41%
+# strcache performance: lookups = 57 / hit rate = 36%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=0/51=0%
-# Finished Make data base on Mon May 23 02:28:51 2022
+# Load=36/8192=0%, Rehash=0, Collisions=0/57=0%
+# Finished Make data base on Thu May 26 16:37:54 2022
 
  
