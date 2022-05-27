@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_window.c                                       :+:      :+:    :+:   */
+/*   check_enemy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 23:47:05 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 17:07:48 by dpaulino         ###   ########.fr       */
+/*   Created: 2022/05/27 17:58:05 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/05/27 17:58:59 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	new_window(t_data *data)
+int	check_enemy(t_data *data)
 {
-	data->window.width = data->map.width * IMG_SIZE;
-	data->window.height = data->map.height * IMG_SIZE;
-	data->window.start = mlx_new_window(data->mlx, data->window.width,
-			data->window.height, "Game");
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	while (data->map.map[y])
+	{
+		while (data->map.map[y][x])
+		{
+			if (data->map.map[y][x] == 'M')
+			{
+				return (0);
+			}
+			x++;
+		}
+		x = 0;
+		y++;
+	}
+	return (1);
 }

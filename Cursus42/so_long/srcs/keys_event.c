@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:13 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 03:59:45 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 18:26:50 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	controls(int key, t_data *data)
 	{
 		mlx_destroy_window(data->mlx, data->window.start);
 	}
-	if (key == W ||key == S ||key == A ||key == D)
+	if (key == W || key == S || key == A || key == D)
 	{
 		data->player.score++;
 		finish_game(data, key);
@@ -31,9 +31,10 @@ int	controls(int key, t_data *data)
 	if (key == R)
 	{
 		free(data->map.map);
-		read_map(data,data->map.path);
+		read_map(data, data->map.path);
 		player_position(data);
-		enemy_position(data);
+		if (check_enemy(data) == 0)
+			enemy_position(data); //check enemy
 		data->coin.amount = count_coins(data);
 	}
 	return (0);

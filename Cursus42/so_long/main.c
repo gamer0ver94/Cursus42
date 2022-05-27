@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:31 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 02:16:21 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 18:25:55 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ int	main(int argc, char **argv)
 		data.coin.amount = count_coins(&data);
 		debugger(&data);
 		player_position(&data);
-		enemy_position(&data);
+		if (check_enemy(&data) == 0)
+			enemy_position(&data);
 		new_window(&data);
-		graphics_render(&data);
+		// graphics_render(&data);
 		keys_event(&data);
 	}
 	return (0);

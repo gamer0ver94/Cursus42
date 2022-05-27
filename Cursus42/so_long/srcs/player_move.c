@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:24:26 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 04:00:21 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 17:14:05 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,8 @@ void	walk_on_floor(t_data *data, int key, int row, int col)
 	}
 }
 
-void	player_move(t_data *data, int key)
+void	move_direction(t_data *data, int key, int row, int col)
 {
-	int	row;
-	int	col;
-
-	row = data->player.row;
-	col = data->player.col;
 	if (key == W)
 	{
 		if (data->map.map[row - 1][col] == '0')
@@ -83,6 +78,16 @@ void	player_move(t_data *data, int key)
 		if (data->map.map[row + 1][col] == 'C')
 			walk_on_coins(data, key, row, col);
 	}
+}
+
+void	player_move(t_data *data, int key)
+{
+	int	row;
+	int	col;
+
+	row = data->player.row;
+	col = data->player.col;
+	move_direction(data, key, row, col);
 	if (key == A)
 	{
 		if (data->map.map[row][col - 1] == '0')

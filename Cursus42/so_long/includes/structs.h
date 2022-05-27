@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 23:47:36 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 03:20:05 by dpaulino         ###   ########.fr       */
+/*   Created: 2022/05/27 17:25:03 by dpaulino          #+#    #+#             */
+/*   Updated: 2022/05/27 17:30:44 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
-#endif
+#ifndef STRUCTS_H
+# define STRUCTS_H
+
 typedef struct s_img
 {
 	void	*start;
@@ -25,7 +25,7 @@ typedef struct s_asset
 	t_img	img;
 	int		row;
 	int		col;
-	int	amount;
+	int		amount;
 }	t_asset;
 
 typedef struct s_window
@@ -36,14 +36,12 @@ typedef struct s_window
 	char	*title;
 }	t_window;
 
-
-
 typedef struct s_map
 {
-	char **map;
-	char *path;
-	int width;
-	int height;
+	char	**map;
+	char	*path;
+	int		width;
+	int		height;
 
 }	t_map;
 
@@ -62,8 +60,7 @@ typedef struct s_enemy
 	int		col;
 }	t_enemy;
 
-
-typedef	struct s_data
+typedef struct s_data
 {
 	void		*mlx;
 	t_window	window;
@@ -76,3 +73,4 @@ typedef	struct s_data
 	t_asset		game_menu;
 	t_enemy		enemy;
 }	t_data;
+#endif

@@ -6,7 +6,7 @@
 #    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/05/27 04:00:09 by dpaulino         ###   ########.fr        #
+#    Updated: 2022/05/27 17:58:31 by dpaulino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,15 @@ NAME			=	so_long
 SRCS			=	main.c srcs/get_next_line.c srcs/s_initialization.c srcs/get_next_line_utils.c \
 					srcs/debugger.c srcs/read_map.c srcs/new_window.c srcs/keys_event.c \
 					srcs/player_move.c srcs/player_position.c srcs/graphics_render.c srcs/enemy_move.c \
-					srcs/enemy_position.c srcs/count_coins.c srcs/exit_position.c srcs/finish_game.c
+					srcs/enemy_position.c srcs/count_coins.c srcs/exit_position.c srcs/finish_game.c \
+					srcs/check_enemy.c
 					
 OBJS			=	${SRCS:.c=.o}
 
 LD_FLAGS		=	-L libft -L mlx
 
-MLX_FLAGS		=	 -lmlx -lXext -lX11
-# MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
+# MLX_FLAGS		=	 -lmlx -lXext -lX11
+MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 LIBFT_FLAGS		=	-lft
 

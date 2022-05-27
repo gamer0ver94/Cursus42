@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:20:52 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 03:48:25 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:50:41 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,32 +63,33 @@ int	enemy_move_row(t_data	*data)
 	}
 	return (0);
 }
-int on_and_off()
+
+int	on_and_off(void)
 {
-	static int x;
+	static int	x;
 
 	x++;
-	if(x == 2)
+	if (x == 2)
 	{
 		x = 0;
-		return(1);
+		return (1);
 	}
 	return (0);
 }
 
 int	enemy_moves(t_data *data)
 {
-	int res;
+	int	res;
 
 	res = on_and_off();
 	if (data->enemy.row != data->player.row
 		|| data->enemy.col != data->player.col)
 	{
-		if(res == 0)
+		if (res == 0)
 		{
 			enemy_move_row(data);
 		}
-		if(res == 1)
+		if (res == 1)
 			enemy_move_col(data);
 	}
 	enemy_position(data);
