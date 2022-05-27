@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:17:57 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/26 18:20:45 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 02:13:50 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,9 @@ void	debugger(t_data	*data)
 		row++;
 		printf("\n");
 	}
-	printf("\n\n\n");
+	printf("__________________________\n\n");
+	printf("\n\n             SCORE : %d", data->player.score);
+	printf("\n\n             REMAINING COINS : %d", data->coin.amount);
+	printf("\n\n");
+	printf("__________________________\n");
 }

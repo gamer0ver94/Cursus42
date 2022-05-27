@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:13 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/26 18:32:19 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:59:45 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	controls(int key, t_data *data)
 	if (key == W ||key == S ||key == A ||key == D)
 	{
 		data->player.score++;
-		printf("%d\n",data->player.score);
-		frame_engine(data, key);
+		finish_game(data, key);
+		player_move(data, key);
 	}
 	if (key == 108)
 	{
@@ -34,6 +34,7 @@ int	controls(int key, t_data *data)
 		read_map(data,data->map.path);
 		player_position(data);
 		enemy_position(data);
+		data->coin.amount = count_coins(data);
 	}
 	return (0);
 }

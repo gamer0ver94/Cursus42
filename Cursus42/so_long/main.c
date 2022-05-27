@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:31 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/26 19:04:18 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 02:16:21 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 	{
 		s_initialization(&data, argv[1]);
 		read_map(&data, argv[1]);
+		data.coin.amount = count_coins(&data);
+		debugger(&data);
 		player_position(&data);
 		enemy_position(&data);
 		new_window(&data);

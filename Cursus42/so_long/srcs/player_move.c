@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frame_engine.c                                     :+:      :+:    :+:   */
+/*   player_move.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:24:26 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/26 18:26:07 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 04:00:21 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-// void    finish_game(t_data *data, int row, int col)
-// {
-
-// }
 
 void	walk_on_coins(t_data *data, int key, int row, int col)
 {
@@ -39,7 +35,7 @@ void	walk_on_coins(t_data *data, int key, int row, int col)
 		data->map.map[row][col + 1] = 'P';
 	}
 	data->player.score++;
-	printf("%d\n", data->player.score);
+	data->coin.amount--;
 }
 
 void	walk_on_floor(t_data *data, int key, int row, int col)
@@ -66,7 +62,7 @@ void	walk_on_floor(t_data *data, int key, int row, int col)
 	}
 }
 
-void	frame_engine(t_data *data, int key)
+void	player_move(t_data *data, int key)
 {
 	int	row;
 	int	col;
@@ -92,15 +88,16 @@ void	frame_engine(t_data *data, int key)
 		if (data->map.map[row][col - 1] == '0')
 			walk_on_floor(data, key, row, col);
 		if (data->map.map[row][col - 1] == 'C')
-			walk_on_floor(data, key, row, col);
+			walk_on_coins(data, key, row, col);
 	}
 	if (key == D)
 	{
 		if (data->map.map[row][col + 1] == '0')
 			walk_on_floor(data, key, row, col);
 		if (data->map.map[row][col + 1] == 'C')
-			walk_on_floor(data, key, row, col);
+			walk_on_coins(data, key, row, col);
 	}
+	exit_position(data);
 	player_position(data);
 	debugger(data);
 }

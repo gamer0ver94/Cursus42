@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:20:52 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/26 21:03:05 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:48:25 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	enemy_move_col(t_data	*data)
 {
-	if (data->map.map[data->enemy.row - 1][data->enemy.col] != '1')
+	if (data->map.map[data->enemy.row - 1][data->enemy.col] != '1'
+		&& data->map.map[data->enemy.row - 1][data->enemy.col] != 'C')
 	{
 		if (data->enemy.row > data->player.row)
 		{
@@ -24,7 +25,8 @@ int	enemy_move_col(t_data	*data)
 			return (0);
 		}
 	}
-	if (data->map.map[data->enemy.row + 1][data->enemy.col] != '1')
+	if (data->map.map[data->enemy.row + 1][data->enemy.col] != '1'
+			&& data->map.map[data->enemy.row + 1][data->enemy.col] != 'C')
 	{
 		if (data->enemy.row < data->enemy.col)
 		{
@@ -36,11 +38,10 @@ int	enemy_move_col(t_data	*data)
 	return (0);
 }
 
-int	enemy_move_row(t_data	*data , int a)
+int	enemy_move_row(t_data	*data)
 {
-	a *= -1;
-	printf("%d\n",a);
-	if (data->map.map[data->enemy.row][data->enemy.col + 1] != '1')
+	if (data->map.map[data->enemy.row][data->enemy.col + 1] != '1'
+		&& data->map.map[data->enemy.row][data->enemy.col + 1] != 'C')
 	{
 		if (data->enemy.col < data->player.col)
 		{
@@ -50,7 +51,8 @@ int	enemy_move_row(t_data	*data , int a)
 			return (0);
 		}
 	}
-	if (data->map.map[data->enemy.row][data->enemy.col - 1] != '1')
+	if (data->map.map[data->enemy.row][data->enemy.col - 1] != '1'
+		&& data->map.map[data->enemy.row][data->enemy.col - 1] != 'C')
 	{
 		if (data->enemy.col > data->player.col)
 		{
@@ -61,23 +63,33 @@ int	enemy_move_row(t_data	*data , int a)
 	}
 	return (0);
 }
+int on_and_off()
+{
+	static int x;
+
+	x++;
+	if(x == 2)
+	{
+		x = 0;
+		return(1);
+	}
+	return (0);
+}
 
 int	enemy_moves(t_data *data)
 {
-	static int a;
-	a = -1;
-	//create a static char that changed from 1 and 0 everytime it is executed making randow move straight or sides
+	int res;
+
+	res = on_and_off();
 	if (data->enemy.row != data->player.row
 		|| data->enemy.col != data->player.col)
 	{
-		if (data->enemy.row == data->player.row
-			&& (data->map.map[data->enemy.row][data->enemy.col + 1] != '1'
-				&& data->map.map[data->enemy.row][data->enemy.col - 1] != '1'))
+		if(res == 0)
 		{
-			a = enemy_move_row(data, a);
-			return (0);
+			enemy_move_row(data);
 		}
-		enemy_move_col(data);
+		if(res == 1)
+			enemy_move_col(data);
 	}
 	enemy_position(data);
 	return (0);

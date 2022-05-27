@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:47:36 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/23 23:47:40 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:20:05 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ typedef struct s_img
 typedef struct s_asset
 {
 	t_img	img;
+	int		row;
+	int		col;
+	int	amount;
 }	t_asset;
 
 typedef struct s_window
