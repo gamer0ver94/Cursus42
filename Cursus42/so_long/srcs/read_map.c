@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:34:03 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 17:18:12 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/28 02:04:30 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	read_map(t_data *data, char *argv)
 	int		fd;
 	char	*line;
 	int		i;
-
+	
 	data->map.width = map_width(data);
 	data->map.height = 0;
 	fd = open(argv, O_RDONLY);

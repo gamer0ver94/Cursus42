@@ -28,11 +28,13 @@ this means that the functions will probably running our render and cleaning the 
 
 To fix
 verify that there is only one arg for the map   **check**
+verify that map is not bigger then window       **check**
 verify that there is no more then one player
 verify that the map is rectagular
-create enemy that moves
-create coins to catch
-verify that coins have been colected so we can exit
+create enemy that moves                         **check**
+create coins to catch 							**check**
+verify that coins have been colected so we can exit **check**
 create a score board
-print steps
+print steps 										**check**
 create maps
+Esc can exit with no seg fault

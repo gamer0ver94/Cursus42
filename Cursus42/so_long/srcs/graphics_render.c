@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:07:01 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/05/27 18:23:03 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/29 05:15:46 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,41 @@
 
 void	map_constructor(t_data *data, int row, int col)
 {
-	if (data->map.map[row][col] == '1')
-		mlx_put_image_to_window(data->mlx, data->window.start,
-			data->wall.img.start, col * IMG_SIZE, row * IMG_SIZE);
-	if (data->map.map[row][col] == '0')
-		mlx_put_image_to_window(data->mlx, data->window.start,
-			data->floor.img.start, col * IMG_SIZE, row * IMG_SIZE);
-	if (data->map.map[row][col] == 'P')
-		mlx_put_image_to_window(data->mlx, data->window.start,
-			data->player.img.start, col * IMG_SIZE, row * IMG_SIZE);
-	if (data->map.map[row][col] == 'C')
-		mlx_put_image_to_window(data->mlx, data->window.start,
-			data->coin.img.start, col * IMG_SIZE, row * IMG_SIZE);
-	if (data->map.map[row][col] == 'M' && check_enemy(data) == 0)
-		mlx_put_image_to_window(data->mlx, data->window.start,
-			data->enemy.img.start, col * IMG_SIZE, row * IMG_SIZE);
-	if (data->map.map[row][col] == 'E')
-		mlx_put_image_to_window(data->mlx, data->window.start,
-			data->exit.img.start, col * IMG_SIZE, row * IMG_SIZE);
+	static int p;
+
+	if(data->menu.status == ON)
+	{
+		mlx_put_image_to_window(data->mlx, data->window.start,data->menu.img.start, 0,0);
+		data->menu.status = WAIT;
+	}
+	p++;
+	if(data->menu.status == SELECTED)
+	{
+		if (data->map.map[row][col] == '1')
+		{
+			mlx_put_image_to_window(data->mlx, data->window.start,
+				data->wall.img.start, (1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+		}
+			
+		if (data->map.map[row][col] == '0')
+			mlx_put_image_to_window(data->mlx, data->window.start,
+				data->floor.img.start,(1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+		if (data->map.map[row][col] == 'P')
+			mlx_put_image_to_window(data->mlx, data->window.start,
+				data->player.img.start, (1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+		if (data->map.map[row][col] == 'C')
+			mlx_put_image_to_window(data->mlx, data->window.start,
+				data->coin.img.start,(1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+		if (data->map.map[row][col] == 'M')
+			mlx_put_image_to_window(data->mlx, data->window.start,
+				data->enemy.img.start,(1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+		if (data->map.map[row][col] == 'E')
+			mlx_put_image_to_window(data->mlx, data->window.start,
+				data->exit.img.start,(1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+		if(data->map.map[row][col] == 'L')
+			mlx_put_image_to_window(data->mlx, data->window.start,
+				data->player.img.start, (1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+	}
 }
 
 int	time_out(int time, t_data *data)
@@ -51,7 +68,7 @@ int	graphics_render(t_data *data)
 	int			col;
 	static int	time;
 
-	if (check_enemy(data) == 0)
+	if (check_enemy(data) == 0 && data->menu.status == SELECTED)
 		time = time_out(time, data);	//check enemy
 	row = 0;
 	col = 0;

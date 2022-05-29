@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:25:03 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 17:30:44 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/29 04:49:24 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,30 @@ typedef struct s_enemy
 	int		col;
 }	t_enemy;
 
+typedef struct s_menu
+{
+	t_img	img;
+	int		status;
+	int		sp;
+	int		mp;
+	int		quit;
+}	t_menu;
+
 typedef struct s_data
 {
 	void		*mlx;
 	t_window	window;
 	t_map		map;
 	t_player	player;
+	t_player	player2;
 	t_asset		wall;
 	t_asset		floor;
 	t_asset		coin;
 	t_asset		exit;
 	t_asset		game_menu;
 	t_enemy		enemy;
+	t_asset		effect_1;
+	t_asset		effect_2;
+	t_menu		menu;
 }	t_data;
 #endif

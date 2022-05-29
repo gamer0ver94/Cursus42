@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:24:26 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/27 17:14:05 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/29 04:05:43 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,5 @@ void	player_move(t_data *data, int key)
 	}
 	exit_position(data);
 	player_position(data);
-	debugger(data);
+	// debugger(data);
 }
