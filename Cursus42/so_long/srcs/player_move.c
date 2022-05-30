@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:24:26 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/29 04:05:43 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/30 03:14:58 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	move_direction(t_data *data, int key, int row, int col)
 			walk_on_floor(data, key, row, col);
 		if (data->map.map[row - 1][col] == 'C')
 			walk_on_coins(data, key, row, col);
+				data->player.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char1_back.xpm",&data->player.img.width,&data->player.img.height);
 	}
 	if (key == S)
 	{
@@ -77,6 +78,7 @@ void	move_direction(t_data *data, int key, int row, int col)
 			walk_on_floor(data, key, row, col);
 		if (data->map.map[row + 1][col] == 'C')
 			walk_on_coins(data, key, row, col);
+				data->player.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char1_front.xpm",&data->player.img.width,&data->player.img.height);
 	}
 }
 
@@ -94,6 +96,7 @@ void	player_move(t_data *data, int key)
 			walk_on_floor(data, key, row, col);
 		if (data->map.map[row][col - 1] == 'C')
 			walk_on_coins(data, key, row, col);
+		data->player.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char1_left.xpm",&data->player.img.width,&data->player.img.height);
 	}
 	if (key == D)
 	{
@@ -101,6 +104,7 @@ void	player_move(t_data *data, int key)
 			walk_on_floor(data, key, row, col);
 		if (data->map.map[row][col + 1] == 'C')
 			walk_on_coins(data, key, row, col);
+				data->player.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char1_right.xpm",&data->player.img.width,&data->player.img.height);
 	}
 	exit_position(data);
 	player_position(data);

@@ -1,13 +1,21 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/gameoverstation/Documents/Cursus42/Cursus42/so_long'
+gcc -g -Wall -Werror -Wextra   -c -o main.o main.c
+gcc -g -Wall -Werror -Wextra   -c -o srcs/get_next_line.o srcs/get_next_line.c
+gcc -g -Wall -Werror -Wextra   -c -o srcs/s_initialization.o srcs/s_initialization.c
+ 
+gcc -g -Wall -Werror -Wextra   -c -o srcs/get_next_line_utils.o srcs/get_next_line_utils.c
+gcc -g -Wall -Werror -Wextra   -c -o srcs/debugger.o srcs/debugger.c
+gcc -g -Wall -Werror -Wextra   -c -o srcs/read_map.o srcs/read_map.c
+gcc -g -Wall -Werror -Wextra   -c -o srcs/new_window.o srcs/new_window.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/keys_event.o srcs/keys_event.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/player_move.o srcs/player_move.c
+ 
 gcc -g -Wall -Werror -Wextra   -c -o srcs/player_position.o srcs/player_position.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/graphics_render.o srcs/graphics_render.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/enemy_move.o srcs/enemy_move.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/enemy_position.o srcs/enemy_position.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/count_coins.o srcs/count_coins.c
- 
 gcc -g -Wall -Werror -Wextra   -c -o srcs/exit_position.o srcs/exit_position.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/finish_game.o srcs/finish_game.c
 gcc -g -Wall -Werror -Wextra   -c -o srcs/check_enemy.o srcs/check_enemy.c

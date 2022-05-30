@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:47:33 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/29 05:24:13 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/05/30 03:02:44 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@
 // # include <X11/X.h>
 // # include <sys/stat.h>
 # include <fcntl.h>
-# define WALL "assets/wall.xpm"
-# define FLOOR "assets/floor.xpm"
-# define PLAYER "assets/player.xpm"
-# define COIN "assets/coin.xpm"
-# define ENEMY "assets/enemy.xpm"
-# define EXIT1 "assets/exit1.xpm"
-# define EXIT2 "assets/exit2.xpm"
+# define WALL "assets/water.xpm"
+# define FLOOR "assets/sand.xpm"
+# define PLAYER "assets/char1_front.xpm"
+# define COIN "assets/ball.xpm"
+# define ENEMY "assets/char2_front.xpm"
+# define EXIT1 "assets/silver_door.xpm"
+# define EXIT2 "assets/gold_door.xpm"
 # define GAME_MENU "assets/game_menu.xpm"
 # define EFFECT_1 "assets/effect_1.xpm"
 # define EFFECT_2 "assets/effect_2.xpm"
