@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:07:01 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/05/30 13:58:59 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/02 19:03:38 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,11 @@ int	graphics_render(t_data *data)
 	int			row;
 	int			col;
 	static int	time;
-	
-	mlx_string_put(data->mlx,data->window.start,100,100,3093151,ft_itoa(data->player.score));
+	if(data->menu.status == SELECTED)
+	{
+		mlx_clear_window(data->mlx, data->window.start);
+		mlx_string_put(data->mlx,data->window.start,100,100,3093151,ft_itoa(data->player.score));
+	}
 	if (check_enemy(data) == 0 && data->menu.status == SELECTED)
 		time = time_out(time, data);	//check enemy
 	row = 0;
