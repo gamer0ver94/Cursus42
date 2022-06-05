@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 30 13:32:12 2022
+# Make data base, printed on Sun Jun  5 03:13:10 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-52638a01-0af0-4c44-86ee-c7f93d268ca0.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8416187e-bb73-4801-a770-a4b2b8531640.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -63,7 +63,7 @@ VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/c3511e6c6
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.EFD5M1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.7M3SM1
 # default
 .LOADED := 
 # default
@@ -105,7 +105,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3344
+VSCODE_PID = 3034
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -113,7 +113,7 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1519,unix/GameoverStation:/tmp/.ICE-unix/1519
+SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1568,unix/GameoverStation:/tmp/.ICE-unix/1568
 # automatic
 *F = $(notdir $*)
 # environment
@@ -165,7 +165,7 @@ LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/97
 # environment
-INVOCATION_ID = 54248fd4e924407ca5f285bc8e6a67ca
+INVOCATION_ID = 6318ca8c52fe499e81bf66b1bc78a34c
 # environment
 SNAP_REVISION = 97
 # environment
@@ -205,7 +205,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := so_long
 # environment
-SYSTEMD_EXEC_PID = 1543
+SYSTEMD_EXEC_PID = 1590
 # environment
 DISPLAY = :0
 # environment
@@ -221,11 +221,11 @@ SNAP_DATA = /var/snap/code/97
 # environment
 SNAP_CONTEXT = xnVtywYhVzLT5l3wcpMSoDl0XhgIJgpIxKPOfm_YdIO8IvxZwekZ
 # environment
-MANAGERPID = 1380
+MANAGERPID = 1428
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3296
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2984
 # environment
 _ = /snap/code/97/usr/share/code/code
 # environment
@@ -237,7 +237,7 @@ CFLAGS = -Wall -Werror -Wextra
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/gameoverstation/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:39558
+JOURNAL_STREAM = 8:29617
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -280,6 +280,7 @@ CC = gcc -g
 SNAP_USER_DATA = /home/gameoverstation/snap/code/97
 # environment
 XDG_MENU_PREFIX = gnome-
+ 
 # makefile (from 'Makefile', line 23)
 LD_FLAGS = -L libft -L mlx
 # environment
@@ -290,7 +291,6 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
 # Load=139/1024=14%, Rehash=0, Collisions=9/173=5%
- 
 
 # Pattern-specific Variable Values
 
@@ -311,48 +311,48 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Not a target:
 srcs/player2_move.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.965728819
+#  Last modified 2022-06-04 00:22:08.391093926
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/graphics_render.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.829727923
+#  Last modified 2022-06-04 00:22:08.251090814
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/new_window.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.745727369
+#  Last modified 2022-06-04 00:22:08.163088859
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/player_move.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.785727633
+#  Last modified 2022-06-04 00:22:08.207089837
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/s_initialization.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.669726868
+#  Last modified 2022-06-04 00:22:08.087087169
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-29 05:01:41.706318694
+#  Last modified 2022-06-03 23:49:47.652558562
 #  File has been updated.
 #  Successfully updated.
 
 so_long: main.o srcs/get_next_line.o srcs/s_initialization.o srcs/get_next_line_utils.o srcs/debugger.o srcs/read_map.o srcs/new_window.o srcs/keys_event.o srcs/player_move.o srcs/player_position.o srcs/graphics_render.o srcs/enemy_move.o srcs/enemy_position.o srcs/count_coins.o srcs/exit_position.o srcs/finish_game.o srcs/check_enemy.o srcs/player2_move.o srcs/player2_position.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-30 03:27:16.541732614
+#  Last modified 2022-06-04 00:22:08.991107262
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 35):
@@ -363,7 +363,7 @@ so_long: main.o srcs/get_next_line.o srcs/s_initialization.o srcs/get_next_line_
 # Not a target:
 srcs/get_next_line_utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.689727
+#  Last modified 2022-06-04 00:22:08.107087613
 #  File has been updated.
 #  Successfully updated.
 
@@ -380,14 +380,14 @@ clean:
 # Not a target:
 srcs/player2_position.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.985728951
+#  Last modified 2022-06-04 00:22:08.41109437
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/get_next_line.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.649726737
+#  Last modified 2022-06-04 00:22:08.067086725
 #  File has been updated.
 #  Successfully updated.
 
@@ -400,7 +400,7 @@ re: fclean all
 # Not a target:
 srcs/player_position.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.805727764
+#  Last modified 2022-06-04 00:22:08.227090281
 #  File has been updated.
 #  Successfully updated.
 
@@ -413,7 +413,7 @@ srcs/player_position.o:
 # Not a target:
 srcs/finish_game.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.925728555
+#  Last modified 2022-06-04 00:22:08.347092949
 #  File has been updated.
 #  Successfully updated.
 
@@ -437,56 +437,56 @@ fclean: clean
 # Not a target:
 srcs/count_coins.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.889728318
+#  Last modified 2022-06-04 00:22:08.311092148
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/keys_event.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.765727501
+#  Last modified 2022-06-04 00:22:08.187089392
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/read_map.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.725727237
+#  Last modified 2022-06-04 00:22:08.147088503
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.621726551
+#  Last modified 2022-06-04 00:22:08.043086191
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/enemy_move.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.85372808
+#  Last modified 2022-06-04 00:22:08.275091348
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/check_enemy.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.945728687
+#  Last modified 2022-06-04 00:22:08.367093392
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/enemy_position.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.869728187
+#  Last modified 2022-06-04 00:22:08.291091704
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/exit_position.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.905728423
+#  Last modified 2022-06-04 00:22:08.327092503
 #  File has been updated.
 #  Successfully updated.
 
@@ -498,7 +498,7 @@ srcs/exit_position.o:
 # Not a target:
 srcs/debugger.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 03:27:15.705727105
+#  Last modified 2022-06-04 00:22:08.127088059
 #  File has been updated.
 #  Successfully updated.
 
@@ -508,6 +508,7 @@ srcs/debugger.o:
 
 # No 'vpath' search paths.
 
+ 
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 43 / storage = 557 B / avg = 12 B
@@ -516,6 +517,6 @@ srcs/debugger.o:
 # strcache performance: lookups = 64 / hit rate = 32%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=0/64=0%
-# Finished Make data base on Mon May 30 13:32:12 2022
+# Finished Make data base on Sun Jun  5 03:13:10 2022
 
  

@@ -6,7 +6,7 @@
 #    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/05/30 15:05:32 by dpaulino         ###   ########.fr        #
+#    Updated: 2022/06/03 23:49:47 by dpaulino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ OBJS			=	${SRCS:.c=.o}
 
 LD_FLAGS		=	-L libft -L mlx
 
-# MLX_FLAGS		=	 -lmlx -lXext -lX11
-MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLX_FLAGS		=	 -lmlx -lXext -lX11
+# MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 LIBFT_FLAGS		=	-lft
 

@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:37 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/29 22:48:08 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/05 03:47:19 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	s_initialization(t_data *data)
 	if (check_enemy(data) == 0)
 		data->enemy.img.start = mlx_xpm_file_to_image(data->mlx, ENEMY,
 				&data->enemy.img.width, &data->enemy.img.height);
-	else
-		printf("THERE IS NO ENEMIES");
 	data->exit.img.start = mlx_xpm_file_to_image(data->mlx, EXIT1,
 			&data->exit.img.width, &data->exit.img.height);
 	data->game_menu.img.start = mlx_xpm_file_to_image(data->mlx, GAME_MENU,
 			&data->game_menu.img.width, &data->game_menu.img.height);
 	data->player.score = 0;
+	data->player2.img.start = mlx_xpm_file_to_image(data->mlx, PLAYER2,&data->player.img.width, &data->player2.img.height);
+	data->player.score_table.start = mlx_xpm_file_to_image(data->mlx, SCORE,&data->player.img.width, &data->player2.img.height);
 }

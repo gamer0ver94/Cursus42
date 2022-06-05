@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:25:03 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/29 23:49:41 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/05 03:45:52 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_map
 typedef struct s_player
 {
 	t_img	img;
+	t_img 	score_table;
 	int		score;
 	int		row;
 	int		col;

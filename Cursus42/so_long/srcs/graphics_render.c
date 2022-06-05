@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:07:01 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/06/02 19:03:38 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/05 03:58:30 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 void	map_constructor(t_data *data, int row, int col)
 {
-	static int p;
-
 	if(data->menu.status == ON)
 	{
 		mlx_put_image_to_window(data->mlx, data->window.start,data->menu.img.start, 0,0);
 		data->menu.status = WAIT;
 	}
-	p++;
 	if(data->menu.status == SELECTED)
 	{
+		
 		if (data->map.map[row][col] == '1')
 		{
 			mlx_put_image_to_window(data->mlx, data->window.start,
@@ -47,7 +45,7 @@ void	map_constructor(t_data *data, int row, int col)
 				data->exit.img.start,(1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
 		if(data->map.map[row][col] == 'L')
 			mlx_put_image_to_window(data->mlx, data->window.start,
-				data->player.img.start, (1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
+				data->player2.img.start, (1920 / 2) - ((data->map.width / 2) * IMG_SIZE) + (IMG_SIZE * col) ,(1080 / 2) - ((data->map.height / 2) * IMG_SIZE) + (row * IMG_SIZE));
 	}
 }
 
@@ -67,15 +65,12 @@ int	graphics_render(t_data *data)
 	int			row;
 	int			col;
 	static int	time;
-	if(data->menu.status == SELECTED)
-	{
-		mlx_clear_window(data->mlx, data->window.start);
-		mlx_string_put(data->mlx,data->window.start,100,100,3093151,ft_itoa(data->player.score));
-	}
-	if (check_enemy(data) == 0 && data->menu.status == SELECTED)
-		time = time_out(time, data);	//check enemy
+
 	row = 0;
 	col = 0;
+
+	if (check_enemy(data) == 0 && data->menu.status == SELECTED)
+		time = time_out(time, data);	//check enemy
 	while (data->map.map[row])
 	{
 		while (data->map.map[row][col])
@@ -86,6 +81,7 @@ int	graphics_render(t_data *data)
 			row++;
 			col = 0;
 	}
+	
 	if (data->player.row == data->enemy.row //check position
 		&& data->player.col == data->enemy.col)
 	{
