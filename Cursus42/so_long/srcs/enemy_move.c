@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:20:52 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/30 03:25:22 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:00:04 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	enemy_move_col(t_data	*data)
 			data->map.map[data->enemy.row][data->enemy.col] = '0';
 			data->map.map[data->enemy.row -1][data->enemy.col] = 'M';
 			data->enemy.row --;
-			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char2_back.xpm",&data->enemy.img.width,&data->enemy.img.height);
+			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,
+				PLAYER2DOWN, &data->enemy.img.width, &data->enemy.img.height);
 			return (0);
 		}
 	}
@@ -34,7 +35,8 @@ int	enemy_move_col(t_data	*data)
 			data->map.map[data->enemy.row][data->enemy.col] = '0';
 			data->map.map[data->enemy.row + 1][data->enemy.col] = 'M';
 			data->enemy.row ++;
-			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char2_front.xpm",&data->enemy.img.width,&data->enemy.img.height);
+			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,
+					PLAYER2UP, &data->enemy.img.width, &data->enemy.img.height);
 		}
 	}
 	return (0);
@@ -50,7 +52,7 @@ int	enemy_move_row(t_data	*data)
 			data->map.map[data->enemy.row][data->enemy.col] = '0';
 			data->map.map[data->enemy.row][data->enemy.col + 1] = 'M';
 			data->enemy.col++;
-			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char2_right.xpm",&data->enemy.img.width,&data->enemy.img.height);
+			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,PLAYER2RIGHT,&data->enemy.img.width,&data->enemy.img.height);
 			return (0);
 		}
 	}
@@ -62,7 +64,7 @@ int	enemy_move_row(t_data	*data)
 			data->map.map[data->enemy.row][data->enemy.col] = '0';
 			data->map.map[data->enemy.row][data->enemy.col - 1] = 'M';
 			data->enemy.col--;
-			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,"assets/char2_left.xpm",&data->enemy.img.width,&data->enemy.img.height);
+			data->enemy.img.start = mlx_xpm_file_to_image(data->mlx,PLAYER2LEFT,&data->enemy.img.width,&data->enemy.img.height);
 		}
 	}
 	return (0);

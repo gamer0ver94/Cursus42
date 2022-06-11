@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:47:33 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/05 03:47:43 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:34:18 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@
 # define BGMP "assets/bg_menu_mp.xpm"
 # define BGQUIT "assets/bg_menu_quit.xpm"
 # define PLAYER2 "assets/player2.xpm"
+# define P2LEFT "assets/char2_left.xpm"
+# define P2RIGHT "assets/char2_right.xpm"
+# define P2UP "assets/char2_front.xpm"
+# define P2DOWN "assets/char2_back.xpm"
 # define SCORE "assets/score.xpm"
 # define IMG_SIZE 80
 # define ON  1
@@ -47,32 +51,32 @@
 # define WAIT  2
 # define SELECTED 3
 // linux
-#define W 119
-#define S 115
-#define D 100
-#define A 97
-#define ESC 65307
-#define R 114
-#define ENEMY_SPEED 50
-#define UP 65362
-#define DOWN 65364
-#define LEFT 65361
-#define RIGHT 65363
-# define ENTER 65293
+// #define W 119
+// #define S 115
+// #define D 100
+// #define A 97
+// #define ESC 65307
+// #define R 114
+// #define ENEMY_SPEED 50
+// #define UP 65362
+// #define DOWN 65364
+// #define LEFT 65361
+// #define RIGHT 65363
+// # define ENTER 65293
 //mac
-// # define W 13
-// # define S 1
-// # define D 2
-// # define A 0
-// # define ESC 53
-// # define R 15
-// # define L 37
-// # define ENEMY_SPEED 50
-// # define UP 126
-// # define DOWN 125
-// # define LEFT 123
-// # define RIGHT 124
-// # define ENTER 36
+# define W 13
+# define S 1
+# define D 2
+# define A 0
+# define ESC 53
+# define R 15
+# define L 37
+# define ENEMY_SPEED 50
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
+# define ENTER 36
 
 void	s_initialization(t_data *data);
 void	read_map(t_data *data, char *argv);

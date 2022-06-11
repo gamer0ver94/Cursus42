@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:07:01 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/06/05 03:58:30 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:24:52 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	graphics_render(t_data *data)
 
 	row = 0;
 	col = 0;
-
 	if (check_enemy(data) == 0 && data->menu.status == SELECTED)
 		time = time_out(time, data);	//check enemy
 	while (data->map.map[row])
