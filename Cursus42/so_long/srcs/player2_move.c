@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   player2_move.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/12 23:45:35 by gameoverstation   #+#    #+#             */
+/*   Updated: 2022/06/12 23:45:36 by gameoverstation  ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	walk_on_coins2(t_data *data, int key, int row, int col)

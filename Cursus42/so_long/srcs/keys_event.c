@@ -3,88 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   keys_event.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:13 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/05 04:00:47 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/13 00:33:04 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	controls(int key, t_data *data)
+void	player_control(t_data *data, int key)
 {
-	printf("%d\n",key);
-	if (key == ESC)
-	{
-		exit(0);
-	}
-	if ((key == W || key == S || key == A || key == D) && (data->menu.status == SELECTED))
+	if ((key == W || key == S || key == A || key == D)
+		&& (data->menu.status == SELECTED))
 	{
 		data->player.score++;
 		finish_game(data, key);
 		player_move(data, key);
-		mlx_put_image_to_window(data->mlx,data->window.start,data->player.score_table.start,75,90);
-		mlx_string_put(data->mlx,data->window.start,80,105,3093151,"SCORE : ");
-		mlx_string_put(data->mlx,data->window.start,130,105,3093151,ft_itoa(data->player.score));
+		mlx_put_image_to_window(data->mlx, data->window.start,
+			data->player.score_table.start, 75, 90);
+		mlx_string_put(data->mlx, data->window.start, 80, 105,
+			3093151, "SCORE : ");
+		mlx_string_put(data->mlx, data->window.start, 130, 105, 3093151,
+			ft_itoa(data->player.score));
 	}
-	//menu options keys
-	if(key == S && data->menu.status == WAIT)
-	{
-		if(data->menu.mp == ON)
-		{
-			data->menu.img.start = mlx_xpm_file_to_image(data->mlx,BGQUIT,&data->menu.img.height, &data->menu.img.width);
-			data->menu.status = ON;
-			data->menu.quit = ON;
-			data->menu.mp = OFF;
-		}
-		if(data->menu.sp == ON)
-		{
-			data->menu.img.start = mlx_xpm_file_to_image(data->mlx,BGMP,&data->menu.img.height, &data->menu.img.width);
-			data->menu.status = ON;
-			data->menu.mp = ON;
-			data->menu.sp = OFF;
-		}
-	}
-	if(key == W && data->menu.status == 2)
-	{
-		if(data->menu.mp == ON)
-		{
-			data->menu.img.start = mlx_xpm_file_to_image(data->mlx,BGSP,&data->menu.img.height, &data->menu.img.width);
-			data->menu.status = ON;
-			data->menu.sp = ON;
-			data->menu.mp = OFF;
-		}
-		if(data->menu.quit == ON)
-		{
-			data->menu.img.start = mlx_xpm_file_to_image(data->mlx,BGMP,&data->menu.img.height, &data->menu.img.width);
-			data->menu.status = ON;
-			data->menu.mp = ON;
-			data->menu.quit = OFF;
-		}
-	}
-	if (key == ENTER)
-	{
-		if (data->menu.sp == ON && data->menu.status == WAIT)
-		{
-			data->menu.status = SELECTED;
-			mlx_clear_window(data->mlx, data->window.start);
-		}
-		if (data->menu.mp == ON && data ->menu.status == WAIT)
-		{
-			data->player2.score++;
-			data->map.map[data->player.row][data->player.col - 1] = 'L';
-			player2_position(data);
-			data->menu.status = SELECTED;
-		}
-	}
+}
+
+int	controls(int key, t_data *data)
+{
+	menu_update(data, key);
+	player_control(data, key);
+	if (key == ESC)
+		exit(0);
+
 	if (key == R)
 	{
 		free(data->map.map);
 		read_map(data, data->map.path);
 		player_position(data);
 		if (check_enemy(data) == 0)
-			enemy_position(data); //check enemy
+			enemy_position(data);
 		data->coin.amount = count_coins(data);
 	}
 	if (data->menu.mp == ON && data->menu.status == SELECTED)

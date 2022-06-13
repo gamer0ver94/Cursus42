@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player2_position.c                                 :+:      :+:    :+:   */
+/*   ft_sleep.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/12 23:45:56 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/06/12 23:45:58 by gameoverstation  ###   ########.fr       */
+/*   Created: 2022/06/13 13:32:01 by gameoverstation   #+#    #+#             */
+/*   Updated: 2022/06/13 13:48:05 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	player2_position(t_data *data)
+int	ft_sleep(void)
 {
-	int	x;
-	int	y;
+	static int	x;
 
-	x = 0;
-	y = 0;
-	while (data->map.map[y])
+	x++;
+	if (x == 1)
 	{
-		while (data->map.map[y][x])
-		{
-			if (data->map.map[y][x] == 'L')
-			{
-				data->player2.row = y;
-				data->player2.col = x;
-			}
-			x++;
-		}
-		x = 0;
-		y++;
+		return (1);
 	}
+	// if (x == 2)
+	// {
+	// 	return (2);
+	// }
+
+	// if (x == 3)
+	// {
+	// 	return (3);
+	// }
+	x = 0;
+	return (0);
 }

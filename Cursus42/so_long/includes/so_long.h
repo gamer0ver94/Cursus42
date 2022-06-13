@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:47:33 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/11 18:34:18 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/13 13:33:22 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,32 +51,32 @@
 # define WAIT  2
 # define SELECTED 3
 // linux
-// #define W 119
-// #define S 115
-// #define D 100
-// #define A 97
-// #define ESC 65307
-// #define R 114
-// #define ENEMY_SPEED 50
-// #define UP 65362
-// #define DOWN 65364
-// #define LEFT 65361
-// #define RIGHT 65363
-// # define ENTER 65293
-//mac
-# define W 13
-# define S 1
-# define D 2
-# define A 0
-# define ESC 53
-# define R 15
-# define L 37
+# define W 119
+# define S 115
+# define D 100
+# define A 97
+# define ESC 65307
+# define R 114
 # define ENEMY_SPEED 50
-# define UP 126
-# define DOWN 125
-# define LEFT 123
-# define RIGHT 124
-# define ENTER 36
+# define UP 65362
+# define DOWN 65364
+# define LEFT 65361
+# define RIGHT 65363
+# define ENTER 65293
+//mac
+// # define W 13
+// # define S 1
+// # define D 2
+// # define A 0
+// # define ESC 53
+// # define R 15
+// # define L 37
+// # define ENEMY_SPEED 50
+// # define UP 126
+// # define DOWN 125
+// # define LEFT 123
+// # define RIGHT 124
+// # define ENTER 36
 
 void	s_initialization(t_data *data);
 void	read_map(t_data *data, char *argv);
@@ -95,4 +95,7 @@ int		check_enemy(t_data *data);
 //player 2 test
 void	player2_move(t_data *data, int key);
 void	player2_position(t_data *data);
+void	menu_update(t_data *data, int key);
+void	map_update(t_data *data, int row, int col);
+int     ft_sleep(void);
 #endif

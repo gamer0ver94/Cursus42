@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:34:03 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/28 02:04:30 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/12 23:46:12 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	map_width(t_data *data)
+int	map_width(char *argv)
 {
 	int		fd;
 	char	*line;
@@ -21,11 +21,11 @@ int	map_width(t_data *data)
 
 	width = 0;
 	i = 0;
-	fd = open(data->map.path, O_RDONLY);
+	fd = open(argv, O_RDONLY);
 	line = get_next_line(fd);
 	if (line == NULL)
 		return (0);
-	while ((line[width] && line[width] != '\n') && (line[width] && line[width] != '\0'))
+	while ((line[width] && line[width] != '\n') && (line[width] && line[width]))
 		width++;
 	while (line != NULL)
 	{
@@ -41,25 +41,14 @@ int	map_width(t_data *data)
 	return (width);
 }
 
-void	read_map(t_data *data, char *argv)
+void	update_map(t_data *data, char *argv)
 {
 	int		fd;
 	char	*line;
 	int		i;
-	
-	data->map.width = map_width(data);
-	data->map.height = 0;
-	fd = open(argv, O_RDONLY);
-	line = get_next_line(fd);
-	while (line != NULL)
-	{
-		data->map.height++;
-		free(line);
-		line = get_next_line(fd);
-	}
+
 	data->map.map = calloc(data->map.height, sizeof(char *) + 1);
-	close(fd);
-	fd = open(data->map.path, O_RDONLY);
+	fd = open(argv, O_RDONLY);
 	line = get_next_line(fd);
 	i = 0;
 	while (line != NULL)
@@ -72,4 +61,23 @@ void	read_map(t_data *data, char *argv)
 	}
 	close(fd);
 	free(line);
+}
+
+void	read_map(t_data *data, char *argv)
+{
+	int		fd;
+	char	*line;
+
+	data->map.width = map_width(argv);
+	data->map.height = 0;
+	fd = open(argv, O_RDONLY);
+	line = get_next_line(fd);
+	while (line != NULL)
+	{
+		data->map.height++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	close(fd);
+	update_map(data, argv);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
+#    By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/06/11 17:34:09 by dpaulino         ###   ########.fr        #
+#    Updated: 2022/06/13 13:32:35 by gameoverstation  ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,20 +16,21 @@ SRCS			=	main.c srcs/get_next_line.c srcs/s_initialization.c srcs/get_next_line_
 					srcs/debugger.c srcs/read_map.c srcs/new_window.c srcs/keys_event.c \
 					srcs/player_move.c srcs/player_position.c srcs/graphics_render.c srcs/enemy_move.c \
 					srcs/enemy_position.c srcs/count_coins.c srcs/exit_position.c srcs/finish_game.c \
-					srcs/check_enemy.c srcs/player2_move.c srcs/player2_position.c
+					srcs/check_enemy.c srcs/player2_move.c srcs/player2_position.c srcs/menu_update.c \
+					srcs/map_update.c srcs/ft_sleep.c
 					
 OBJS			=	${SRCS:.c=.o}
 
 LD_FLAGS		=	-L libft -L mlx
 
-# MLX_FLAGS		=	 -lmlx -lXext -lX11
-MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLX_FLAGS		=	 -lmlx -lXext -lX11
+# MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 LIBFT_FLAGS		=	-lft
 
 CC				=	gcc -g
 
-CFLAGS			=	-Wall -Werror -Wextra
+CFLAGS			=	-Wall -Werror -Wextra -ggdb3
 
 $(NAME)			:	${OBJS}
 					make -C libft

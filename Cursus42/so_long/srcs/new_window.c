@@ -14,6 +14,6 @@
 
 void	new_window(t_data *data)
 {
-	data->window.start = mlx_new_window(data->mlx,1920,
+	data->window.start = mlx_new_window(data->mlx, 1920,
 			1080, "Game");
 }

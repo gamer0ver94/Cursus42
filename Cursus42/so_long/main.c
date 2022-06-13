@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:31 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/29 22:48:24 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/12 18:52:05 by gameoversta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,16 @@ data.player.img.width = 1000;
 	}
 	if (argv[1])
 	{
-		data.map.path = argv[1];
 		read_map(&data, argv[1]);
 		s_initialization(&data);
 		data.coin.amount = count_coins(&data);
-		// debugger(&data);
 		player_position(&data);
 		if (check_enemy(&data) == 0)
 			enemy_position(&data);
 		new_window(&data);
 		graphics_render(&data);
 		keys_event(&data);
+		// debugger(&data);
 	}
 	return (0);
 }
