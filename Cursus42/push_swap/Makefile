@@ -5,26 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/06/16 16:20:37 by dpaulino         ###   ########.fr        #
+#    Created: 2022/06/16 17:18:11 by dpaulino          #+#    #+#              #
+#    Updated: 2022/06/16 17:30:49 by dpaulino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	so_long
+NAME			=	push_swap
 
-SRCS			=	main.c srcs/get_next_line.c srcs/s_initialization.c srcs/get_next_line_utils.c \
-					srcs/debugger.c srcs/read_map.c srcs/new_window.c srcs/keys_event.c \
-					srcs/player_move.c srcs/player_position.c srcs/graphics_render.c srcs/enemy_move.c \
-					srcs/enemy_position.c srcs/count_coins.c srcs/exit_position.c srcs/finish_game.c \
-					srcs/check_enemy.c srcs/player2_move.c srcs/player2_position.c srcs/menu_update.c \
-					srcs/map_update.c srcs/check_player.c srcs/check_map.c srcs/check_errors.c
+SRCS			=	main.c
 					
 OBJS			=	${SRCS:.c=.o}
 
-LD_FLAGS		=	-L libft -L mlx
-
-# MLX_FLAGS		=	 -lmlx -lXext -lX11
-MLX_FLAGS		=	 -Lmlx -lmlx -framework OpenGL -framework AppKit
+LD_FLAGS		=	-L libft
 
 LIBFT_FLAGS		=	-lft
 
@@ -36,14 +28,12 @@ $(NAME)			:	${OBJS}
 					make -C libft
 					cp ../libft/libft.a .
 					@mv libft.a ${NAME}
-					make -C minilibx-linux
-					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS} ${MLX_FLAGS}
+					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS}
 
 all				:	${NAME}
 
 clean			:
 					make clean -C libft
-					make clean -C minilibx-linux
 					rm -rf ${OBJS}
 
 fclean			:	clean
