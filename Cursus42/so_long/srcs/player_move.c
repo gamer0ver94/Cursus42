@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:24:26 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/13 01:32:36 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/06/16 13:40:01 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	walk_on_coins(t_data *data, int key, int row, int col)
 		data->map.map[row][col] = '0';
 		data->map.map[row][col + 1] = 'P';
 	}
-	data->player.score++;
 	data->coin.amount--;
 }
 
@@ -71,7 +70,7 @@ void	move_vertical(t_data *data, int key, int row, int col)
 		if (data->map.map[row - 1][col] == 'C')
 			walk_on_coins(data, key, row, col);
 				data->player.img.start = mlx_xpm_file_to_image(data->mlx,
-				"assets/char1_back.xpm",
+				PLAYERUP,
 				&data->player.img.width, &data->player.img.height);
 	}
 	if (key == S)
@@ -81,7 +80,7 @@ void	move_vertical(t_data *data, int key, int row, int col)
 		if (data->map.map[row + 1][col] == 'C')
 			walk_on_coins(data, key, row, col);
 				data->player.img.start = mlx_xpm_file_to_image(data->mlx,
-				"assets/char1_front.xpm",
+				PLAYERDOWN,
 				&data->player.img.width, &data->player.img.height);
 	}
 }
@@ -95,7 +94,7 @@ void	move_horizontal(t_data *data, int key, int row, int col)
 		if (data->map.map[row][col - 1] == 'C')
 			walk_on_coins(data, key, row, col);
 		data->player.img.start = mlx_xpm_file_to_image(data->mlx,
-				"assets/char1_left.xpm",
+				PLAYERLEFT,
 				&data->player.img.width, &data->player.img.height);
 	}
 	if (key == D)
@@ -105,7 +104,7 @@ void	move_horizontal(t_data *data, int key, int row, int col)
 		if (data->map.map[row][col + 1] == 'C')
 			walk_on_coins(data, key, row, col);
 				data->player.img.start = mlx_xpm_file_to_image(data->mlx,
-				"assets/char1_right.xpm",
+				PLAYERRIGHT,
 				&data->player.img.width, &data->player.img.height);
 	}
 }
@@ -117,6 +116,9 @@ void	player_move(t_data *data, int key)
 
 	row = data->player.row;
 	col = data->player.col;
+	if (data->coin.amount == 0)
+		data->exit.img.start = mlx_xpm_file_to_image(data->mlx,
+				EXIT2, &data->coin.img.width, &data->coin.img.height);
 	move_vertical(data, key, row, col);
 	move_horizontal(data, key, row, col);
 	exit_position(data);

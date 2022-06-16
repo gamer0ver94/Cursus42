@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:13 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/13 00:33:04 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/06/16 14:36:08 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	player_control(t_data *data, int key)
 			3093151, "SCORE : ");
 		mlx_string_put(data->mlx, data->window.start, 130, 105, 3093151,
 			ft_itoa(data->player.score));
+		ft_putstr_fd(ft_itoa(data->player.score), 1);
+		ft_putchar_fd('\n', 1);
 	}
 }
 
@@ -35,7 +37,6 @@ int	controls(int key, t_data *data)
 	player_control(data, key);
 	if (key == ESC)
 		exit(0);
-
 	if (key == R)
 	{
 		free(data->map.map);
@@ -53,9 +54,16 @@ int	controls(int key, t_data *data)
 	return (0);
 }
 
+int	a(void)
+{
+	exit (0);
+	return (0);
+}
+
 void	keys_event(t_data *data)
 {
 	mlx_hook(data->window.start, 2, 1L << 0, controls, data);
+	mlx_hook(data->window.start, 17, 1L << 17, a, data);
 	mlx_loop_hook(data->mlx, graphics_render, data);
 	mlx_loop(data->mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:47:33 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/13 13:33:22 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/06/16 14:41:46 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include "structs.h"
 # include <stdlib.h>
 # include <stdio.h>
+# include <errno.h>
+# include <string.h>
 // # include <stddef.h>
 // # include <sys/types.h>
 // # include <sys/stat.h>
@@ -26,26 +28,38 @@
 // # include <X11/X.h>
 // # include <sys/stat.h>
 # include <fcntl.h>
-# define WALL "assets/water.xpm"
-# define FLOOR "assets/sand.xpm"
-# define PLAYER "assets/char1_front.xpm"
+# define WATER "assets/water.xpm"
+# define SAND "assets/sand.xpm"
+# define PLAYERDOWN "assets/rabit_down.xpm"
+# define PLAYERLEFT "assets/rabit_left.xpm"
+# define PLAYERRIGHT "assets/rabit_right.xpm"
+# define PLAYERUP "assets/rabit_up.xpm"
 # define COIN "assets/ball.xpm"
-# define ENEMY "assets/char2_front.xpm"
+# define ENEMYLEFT "assets/fox_left.xpm"
+# define ENEMYRIGHT "assets/fox_right.xpm"
+# define ENEMYUP "assets/fox_up.xpm"
+# define ENEMYDOWN "assets/fox_down.xpm"
+# define ENEMYLEFTMAD "assets/fox_left_mad.xpm"
+# define ENEMYRIGHTMAD "assets/fox_right_mad.xpm"
+# define ENEMYUPMAD "assets/fox_up_mad.xpm"
+# define ENEMYDOWNMAD "assets/fox_down_mad.xpm"
 # define EXIT1 "assets/silver_door.xpm"
 # define EXIT2 "assets/gold_door.xpm"
+# define P2DOWN "assets/mouse_down.xpm"
+# define P2LEFT "assets/mouse_left.xpm"
+# define P2UP "assets/mouse_up.xpm"
+# define P2RIGHT "assets/mouse_right.xpm"
 # define GAME_MENU "assets/game_menu.xpm"
 # define EFFECT_1 "assets/effect_1.xpm"
 # define EFFECT_2 "assets/effect_2.xpm"
+# define BG "assets/bg_menu.xpm"
 # define BGSP "assets/bg_menu_sp.xpm"
 # define BGMP "assets/bg_menu_mp.xpm"
 # define BGQUIT "assets/bg_menu_quit.xpm"
-# define PLAYER2 "assets/player2.xpm"
-# define P2LEFT "assets/char2_left.xpm"
-# define P2RIGHT "assets/char2_right.xpm"
-# define P2UP "assets/char2_front.xpm"
-# define P2DOWN "assets/char2_back.xpm"
 # define SCORE "assets/score.xpm"
-# define IMG_SIZE 80
+# define WIN_WIDTH 1900
+# define WIN_HEIGHT 1080
+# define IMG_SIZE 50
 # define ON  1
 # define OFF  0
 # define WAIT  2
@@ -92,10 +106,12 @@ int		count_coins(t_data *data);
 void	exit_position(t_data *data);
 void	finish_game(t_data *data, int key);
 int		check_enemy(t_data *data);
-//player 2 test
 void	player2_move(t_data *data, int key);
 void	player2_position(t_data *data);
 void	menu_update(t_data *data, int key);
 void	map_update(t_data *data, int row, int col);
-int     ft_sleep(void);
+int		check_player(t_data *data);
+int		check_map(t_data *data);
+void	check_errors(int error);
+
 #endif

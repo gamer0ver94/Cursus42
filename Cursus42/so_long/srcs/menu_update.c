@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:14:56 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/06/13 00:32:34 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/06/16 14:40:52 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	menu_enter_key(t_data *data)
 	{
 		data->menu.status = SELECTED;
 		mlx_clear_window(data->mlx, data->window.start);
+		data->menu.img.start = mlx_xpm_file_to_image(data->mlx, BG,
+				&data->menu.img.width, &data->menu.img.height);
+		mlx_put_image_to_window(data->mlx, data->window.start,
+			data->menu.img.start, 0, 0);
 	}
 	if (data->menu.mp == ON && data ->menu.status == WAIT)
 	{

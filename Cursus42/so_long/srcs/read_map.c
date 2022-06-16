@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 18:34:03 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/12 23:46:12 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/06/16 10:35:41 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	map_width(char *argv)
 	line = get_next_line(fd);
 	if (line == NULL)
 		return (0);
-	while ((line[width] && line[width] != '\n') && (line[width] && line[width]))
+	while ((line[width] && line[width] != '\n'))
 		width++;
 	while (line != NULL)
 	{
 		while ((line[i] && line[i] != '\n') && (line[i] && line[i] != '\0'))
 			i++;
 		if (i != width)
-			return (0);
+			return (1);
 		i = 0;
 		free(line);
 		line = get_next_line(fd);
@@ -69,6 +69,11 @@ void	read_map(t_data *data, char *argv)
 	char	*line;
 
 	data->map.width = map_width(argv);
+	if (data->map.width == 1)
+	{
+		check_errors(3);
+	}
+
 	data->map.height = 0;
 	fd = open(argv, O_RDONLY);
 	line = get_next_line(fd);

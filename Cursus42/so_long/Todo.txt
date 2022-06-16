@@ -29,12 +29,16 @@ this means that the functions will probably running our render and cleaning the 
 To fix
 verify that there is only one arg for the map   **check**
 verify that map is not bigger then window       **check**
-verify that there is no more then one player
-verify that the map is rectagular
+verify that there is no more then one player    **check**
+verify that the map is rectagular               **check**
 create enemy that moves                         **check**
 create coins to catch 							**check**
 verify that coins have been colected so we can exit **check**
-create a score board
+create a score board                                **check**
 print steps 										**check**
 create maps
-Esc can exit with no seg fault
+create sprite angry when he cant pass thow walls
+edit wallpaper and implement rules and my name
+change door when all coins are colected             **check**
+change printf to errors                             **check**
+Esc can exit with no seg fault                      **check**

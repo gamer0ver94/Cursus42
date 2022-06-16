@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_initialization.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:37 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/11 18:09:58 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/16 13:45:02 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 //initialize struct values
 void	setup_map_objs(t_data *data)
 {
-	data->wall.img.start = mlx_xpm_file_to_image(data->mlx, WALL,
+	data->wall.img.start = mlx_xpm_file_to_image(data->mlx, WATER,
 			&data->wall.img.width, &data->wall.img.height);
-	data->floor.img.start = mlx_xpm_file_to_image(data->mlx, FLOOR,
+	data->floor.img.start = mlx_xpm_file_to_image(data->mlx, SAND,
 			&data->floor.img.width, &data->floor.img.height);
 	data->coin.img.start = mlx_xpm_file_to_image(data->mlx, COIN,
 			&data->coin.img.width, &data->coin.img.height);
@@ -45,15 +45,15 @@ void	s_initialization(t_data *data)
 	data->mlx = mlx_init();
 	setup_menu(data);
 	setup_map_objs(data);
-	data->player.img.start = mlx_xpm_file_to_image(data->mlx, PLAYER,
+	data->player.img.start = mlx_xpm_file_to_image(data->mlx, PLAYERDOWN,
 			&data->player.img.width, &data->player.img.height);
 	if (check_enemy(data) == 0)
 	{
-		data->enemy.img.start = mlx_xpm_file_to_image(data->mlx, ENEMY,
+		data->enemy.img.start = mlx_xpm_file_to_image(data->mlx, ENEMYDOWN,
 				&data->enemy.img.width, &data->enemy.img.height);
 	}
 	data->player.score = 0;
-	data->player2.img.start = mlx_xpm_file_to_image(data->mlx, PLAYER2,
+	data->player2.img.start = mlx_xpm_file_to_image(data->mlx, P2DOWN,
 			&data->player.img.width, &data->player2.img.height);
 	data->player.score_table.start = mlx_xpm_file_to_image(data->mlx, SCORE,
 			&data->player.img.width, &data->player2.img.height);

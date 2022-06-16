@@ -6,7 +6,7 @@
 #    By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/06/13 13:32:35 by gameoverstation  ###   ########.fr        #
+#    Updated: 2022/06/16 02:12:44 by gameoverstation  ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS			=	main.c srcs/get_next_line.c srcs/s_initialization.c srcs/get_next_line_
 					srcs/player_move.c srcs/player_position.c srcs/graphics_render.c srcs/enemy_move.c \
 					srcs/enemy_position.c srcs/count_coins.c srcs/exit_position.c srcs/finish_game.c \
 					srcs/check_enemy.c srcs/player2_move.c srcs/player2_position.c srcs/menu_update.c \
-					srcs/map_update.c srcs/ft_sleep.c
+					srcs/map_update.c srcs/check_player.c srcs/check_map.c srcs/check_errors.c
 					
 OBJS			=	${SRCS:.c=.o}
 
@@ -34,14 +34,16 @@ CFLAGS			=	-Wall -Werror -Wextra -ggdb3
 
 $(NAME)			:	${OBJS}
 					make -C libft
-					# make -C minilibx-linux
+					cp ../libft/libft.a .
+					@mv libft.a ${NAME}
+					make -C minilibx-linux
 					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS} ${MLX_FLAGS}
 
 all				:	${NAME}
 
 clean			:
 					make clean -C libft
-					# make clean -C minilibx-linux
+					make clean -C minilibx-linux
 					rm -rf ${OBJS}
 
 fclean			:	clean

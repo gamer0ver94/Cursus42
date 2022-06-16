@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   finish_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:51:07 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/05/29 04:59:50 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/16 01:55:40 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_exit(void)
 {
-	printf("GG\n");
+	ft_putstr_fd("YOU WON\nWELL PLAYED\n", 1);
 	exit(0);
 }
 

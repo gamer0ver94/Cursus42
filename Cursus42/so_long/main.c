@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr    +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:46:31 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/12 18:52:05 by gameoversta      ###   ########.fr       */
+/*   Updated: 2022/06/16 02:11:22 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-data.player.img.width = 1000;
-	data.player.img.height = 1000;
 	if (argc != 2)
-	{
-		printf("This Program need exactly one argument\n");
-		return (0);
-	}
+		check_errors(2);
 	if (argv[1])
 	{
+		data.map.path = argv[1];
 		read_map(&data, argv[1]);
+		check_map(&data);
+		if (check_player(&data) == 1)
+			check_errors(1);
 		s_initialization(&data);
 		data.coin.amount = count_coins(&data);
 		player_position(&data);
@@ -34,7 +33,6 @@ data.player.img.width = 1000;
 		new_window(&data);
 		graphics_render(&data);
 		keys_event(&data);
-		// debugger(&data);
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:25:03 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/11 18:14:47 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:15:04 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_player
 {
 	t_img	img;
 	t_img	score_table;
+	int		n;
 	int		score;
 	int		row;
 	int		col;

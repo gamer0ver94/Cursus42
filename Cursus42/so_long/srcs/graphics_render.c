@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:07:01 by gameoversta       #+#    #+#             */
-/*   Updated: 2022/06/13 01:26:15 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/06/16 14:33:20 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	graphics_render(t_data *data)
 	if (data->player.row == data->enemy.row
 		&& data->player.col == data->enemy.col)
 	{
-		printf("GAME OVER\n");
+		ft_putstr_fd("GAME OVER\nYOU LOST\n", 1);
 		exit(0);
 	}
 	return (0);

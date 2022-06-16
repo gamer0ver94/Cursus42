@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_enemy.c                                      :+:      :+:    :+:   */
+/*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/27 17:58:05 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/14 22:56:43 by gameoverstation  ###   ########.fr       */
+/*   Created: 2022/06/16 02:01:18 by gameoverstation   #+#    #+#             */
+/*   Updated: 2022/06/16 10:38:01 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	check_enemy(t_data *data)
+void	check_errors(int error)
 {
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 0;
-	while (data->map.map[y])
+	if (error == 1)
 	{
-		while (data->map.map[y][x])
-		{
-			if (data->map.map[y][x] == 'M')
-			{
-				return (0);
-			}
-			x++;
-		}
-		x = 0;
-		y++;
+		ft_putstr_fd("ERROR : Map have NONE or more than one PLAYER\n", 1);
+		exit(1);
 	}
-	return (1);
+	if (error == 2)
+	{
+		ft_putstr_fd("ERROR : This program need exactly ONE ARGUMENT\n", 1);
+		exit(2);
+	}
+	if (error == 3)
+	{
+		ft_putstr_fd("ERROR : This map is NOT VALID\n", 1);
+		exit(3);
+	}
+	if (error == 4)
+	{
+		ft_putstr_fd("ERROR : map not closed with walls\n", 1);
+		exit(4);
+	}
 }

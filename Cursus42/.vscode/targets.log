@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 13 13:32:37 2022
+# Make data base, printed on Thu Jun 16 15:34:54 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b670c27d-310d-4c55-a1f3-65b65891ce6c.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-73046baa-b506-40dd-af7d-4086845d8ed1.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -43,7 +43,7 @@ QT_ACCESSIBILITY = 1
 # environment
 SNAP_INSTANCE_NAME = code
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/98/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -61,11 +61,11 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.5IBYN1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.GEPUN1
 # default
 .LOADED := 
 # default
@@ -105,7 +105,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4081
+VSCODE_PID = 2837
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -113,7 +113,7 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1536,unix/GameoverStation:/tmp/.ICE-unix/1536
+SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1541,unix/GameoverStation:/tmp/.ICE-unix/1541
 # automatic
 *F = $(notdir $*)
 # environment
@@ -159,11 +159,11 @@ SNAP_USER_COMMON = /home/gameoverstation/snap/code/common
 # environment
 LC_TIME = fr_FR.UTF-8
 # environment
-SNAP = /snap/code/98
+SNAP = /snap/code/99
 # environment
-INVOCATION_ID = bc709bba8f6d46d2bdb8f33eb17fc62b
+INVOCATION_ID = 90aff35502aa4d7aa4f9ea4c59ad789b
 # environment
-SNAP_REVISION = 98
+SNAP_REVISION = 99
 # environment
 SNAP_REAL_HOME = /home/gameoverstation
 # environment
@@ -199,7 +199,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1554
+SYSTEMD_EXEC_PID = 1562
 # environment
 DISPLAY = :0
 # environment
@@ -211,17 +211,17 @@ MAKE_VERSION := 4.3
 # environment
 DISABLE_WAYLAND = 1
 # environment
-SNAP_DATA = /var/snap/code/98
+SNAP_DATA = /var/snap/code/99
 # environment
 SNAP_CONTEXT = xnVtywYhVzLT5l3wcpMSoDl0XhgIJgpIxKPOfm_YdIO8IvxZwekZ
 # environment
-MANAGERPID = 1395
+MANAGERPID = 1400
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4027
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2791
 # environment
-_ = /snap/code/98/usr/share/code/code
+_ = /snap/code/99/usr/share/code/code
 # environment
 LC_PAPER = fr_FR.UTF-8
 # environment
@@ -229,7 +229,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/gameoverstation/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:45578
+JOURNAL_STREAM = 8:27621
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -241,11 +241,11 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-db09aeac-1.68.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-db09aeac-1.68.1-main.sock
 # environment
 SNAP_NAME = code
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/98/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/99/usr/share/glib-2.0/schemas
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -253,7 +253,7 @@ IM_CONFIG_PHASE = 1
 # automatic
 <F = $(notdir $<)
 # environment
-SNAP_VERSION = 4af164ea
+SNAP_VERSION = 30d9c6cd
 # default
 SUFFIXES := 
 # environment
@@ -265,7 +265,7 @@ SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
-SNAP_USER_DATA = /home/gameoverstation/snap/code/98
+SNAP_USER_DATA = /home/gameoverstation/snap/code/99
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -285,6 +285,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # . (device 2050, inode 6422688): 10 files, no impossibilities.
 
+ 
 # 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
@@ -313,7 +314,6 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
- 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
@@ -342,6 +342,6 @@ GNUmakefile:
 # strcache performance: lookups = 21 / hit rate = 14%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=0/21=0%
-# Finished Make data base on Mon Jun 13 13:32:37 2022
+# Finished Make data base on Thu Jun 16 15:34:54 2022
 
  

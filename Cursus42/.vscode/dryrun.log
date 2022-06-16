@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/gameoverstation/Documents/Cursus42/Cursus42'
 make: Leaving directory '/home/gameoverstation/Documents/Cursus42/Cursus42'
  
