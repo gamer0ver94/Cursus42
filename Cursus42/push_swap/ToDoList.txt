@@ -1,0 +1,3 @@
+**Create function to initialize stack a and stack b
+**Create function to verify if Stack a is sorted
+**Create Rules

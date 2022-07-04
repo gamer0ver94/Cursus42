@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
+#    By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:18:11 by dpaulino          #+#    #+#              #
-#    Updated: 2022/06/16 17:30:49 by dpaulino         ###   ########.fr        #
+#    Updated: 2022/06/29 18:38:50 by gameoverstation  ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
 
-SRCS			=	main.c
+SRCS			=	main.c srcs/create_stack.c srcs/print_list.c srcs/sort_verification.c srcs/error_handler.c srcs/swap_rules.c srcs/push_rules.c \
+					srcs/del_first_elem.c
 					
 OBJS			=	${SRCS:.c=.o}
 
@@ -26,7 +27,7 @@ CFLAGS			=	-Wall -Werror -Wextra -ggdb3
 
 $(NAME)			:	${OBJS}
 					make -C libft
-					cp ../libft/libft.a .
+					cp libft/libft.a .
 					@mv libft.a ${NAME}
 					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS}
 

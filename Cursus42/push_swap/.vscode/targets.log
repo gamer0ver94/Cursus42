@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,11 +6,12 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 22 06:32:31 2022
+# Make data base, printed on Mon Jul  4 10:40:18 2022
 
 # Variables
 
 # environment
+ 
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
@@ -25,7 +24,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d2740432-99d8-4621-9858-1cfc9b82f671.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-a473f4ec-6eb2-4714-8ba6-d4c0ef2e809b.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -49,7 +48,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/gameoverstation/Documents/Cursus42/Cursus42
+PWD = /home/gameoverstation/Documents/Cursus42/Cursus42/push_swap
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -65,7 +64,7 @@ VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/30d9c6cd9
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.IPMHO1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.S9HUO1
 # default
 .LOADED := 
 # default
@@ -73,13 +72,15 @@ XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.IPMHO1
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/gameoverstation/Documents/Cursus42/Cursus42
+CURDIR := /home/gameoverstation/Documents/Cursus42/Cursus42/push_swap
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
+# makefile (from 'Makefile', line 15)
+SRCS = main.c srcs/create_stack.c srcs/print_list.c srcs/sort_verification.c srcs/error_handler.c srcs/swap_rules.c srcs/push_rules.c srcs/del_first_elem.c
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -96,8 +97,8 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 XDG_SESSION_DESKTOP = ubuntu
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
 # environment
 SNAP_REEXEC = 
 # automatic
@@ -105,7 +106,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4818
+VSCODE_PID = 4089
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -113,7 +114,7 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1534,unix/GameoverStation:/tmp/.ICE-unix/1534
+SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1550,unix/GameoverStation:/tmp/.ICE-unix/1550
 # automatic
 *F = $(notdir $*)
 # environment
@@ -126,6 +127,8 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 18)
+OBJS = ${SRCS:.c=.o}
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
@@ -161,7 +164,7 @@ LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/99
 # environment
-INVOCATION_ID = b209994c1f544bde9966aec41a4ad7c5
+INVOCATION_ID = 9dc20b0348204d86a64eccb4b3a1a155
 # environment
 SNAP_REVISION = 99
 # environment
@@ -178,6 +181,8 @@ LC_TELEPHONE = fr_FR.UTF-8
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
 ?F = $(notdir $?)
+# makefile (from 'Makefile', line 13)
+NAME = push_swap
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -197,9 +202,9 @@ GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.deskto
 # environment
 SNAP_ARCH = amd64
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := push_swap
 # environment
-SYSTEMD_EXEC_PID = 1552
+SYSTEMD_EXEC_PID = 1568
 # environment
 DISPLAY = :0
 # environment
@@ -215,21 +220,23 @@ SNAP_DATA = /var/snap/code/99
 # environment
 SNAP_CONTEXT = xnVtywYhVzLT5l3wcpMSoDl0XhgIJgpIxKPOfm_YdIO8IvxZwekZ
 # environment
-MANAGERPID = 1393
+MANAGERPID = 1382
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4766
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4036
 # environment
 _ = /snap/code/99/usr/share/code/code
 # environment
 LC_PAPER = fr_FR.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'Makefile', line 26)
+CFLAGS = -Wall -Werror -Wextra -ggdb3
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/gameoverstation/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:34268
+JOURNAL_STREAM = 8:20384
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -246,6 +253,8 @@ VSCODE_IPC_HOOK = /run/user/1000/vscode-db09aeac-1.68.1-main.sock
 SNAP_NAME = code
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/99/usr/share/glib-2.0/schemas
+# makefile (from 'Makefile', line 22)
+LIBFT_FLAGS = -lft
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -264,10 +273,14 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 24)
+CC = gcc -g
 # environment
 SNAP_USER_DATA = /home/gameoverstation/snap/code/99
 # environment
 XDG_MENU_PREFIX = gnome-
+# makefile (from 'Makefile', line 20)
+LD_FLAGS = -L libft
 # environment
 GDMSESSION = ubuntu
 # environment
@@ -275,7 +288,7 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=5/158=3%
+# Load=138/1024=13%, Rehash=0, Collisions=9/172=5%
 
 # Pattern-specific Variable Values
 
@@ -283,7 +296,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2050, inode 6422688): 10 files, no impossibilities.
+# . (device 2050, inode 6558043): 10 files, no impossibilities.
 
 # 10 files, no impossibilities in 1 directories.
 
@@ -294,12 +307,48 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Files
 
 # Not a target:
- 
+srcs/sort_verification.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-30 18:46:59.524338612
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/create_stack.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-30 18:46:59.472336659
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-06-29 18:38:50.901130929
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+
+clean:
+ 
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+					make clean -C libft
+					rm -rf ${OBJS}
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+srcs/error_handler.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-30 18:46:59.544339363
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -307,41 +356,88 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-all:
+all: push_swap
+#  Phony target (prerequisite of .PHONY).
 #  Command line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 41):
+					make fclean -C libft
+					rm -rf ${NAME}
+
+push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-30 20:44:27.205265821
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 29):
+					make -C libft
+					cp libft/libft.a .
+					@mv libft.a ${NAME}
+					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS}
+
+# Not a target:
+main.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-30 20:44:27.165265653
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/print_list.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-30 20:44:27.185265737
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/swap_rules.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-30 18:46:59.568340265
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-makefile:
+srcs/del_first_elem.o:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-06-30 18:46:59.612341918
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
 # Not a target:
-GNUmakefile:
+srcs/push_rules.o:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-06-30 18:46:59.592341166
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=17/1024=2%, Rehash=0, Collisions=1/44=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 166 B / avg = 9 B
-# current buf: size = 8162 B / used = 166 B / count = 18 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 286 B / avg = 11 B
+# current buf: size = 8162 B / used = 286 B / count = 26 / avg = 11 B
 
-# strcache performance: lookups = 21 / hit rate = 14%
+# strcache performance: lookups = 47 / hit rate = 44%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=0/21=0%
-# Finished Make data base on Wed Jun 22 06:32:31 2022
+# Load=26/8192=0%, Rehash=0, Collisions=0/47=0%
+# Finished Make data base on Mon Jul  4 10:40:18 2022
 
  

@@ -1,0 +1,59 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_rules.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/27 14:14:00 by gameoverstation   #+#    #+#             */
+/*   Updated: 2022/07/04 12:23:29 by gameoverstation  ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/push_swap.h"
+
+void	pb(t_list **stack_a, t_list **stack_b)
+{	
+	t_list *t;
+
+	t = *stack_a;
+	if ((*stack_b) == NULL)
+	{
+		*stack_b = ft_lstnew(t->content);
+	}
+	else
+	{
+		ft_lstadd_back(stack_b, ft_lstnew(t->content));
+	}
+	del_first_elem(stack_a);
+}
+
+void	pa(t_list **stack_a, t_list **stack_b)
+{	
+	t_list	*t;
+
+	t = *stack_b;
+	if ((*stack_a) == NULL)
+	{
+		*stack_a = ft_lstnew(t->content);
+	}
+	else
+	{
+		ft_lstadd_back(stack_a, ft_lstnew(t->content));
+	}
+	del_first_elem(stack_b);
+}
+
+void	push_rules(t_list **stack_a, t_list **stack_b, char *rule)
+{
+	if (rule[0] == 'p' && rule[1] == 'a')
+	{
+		printf("----pa----\n");
+		pa(stack_a, stack_b);
+	}
+	if (rule[0] == 'p' && rule[1] == 'b')
+	{
+		printf("----pb----\n");
+		pb(stack_a, stack_b);
+	}
+}
