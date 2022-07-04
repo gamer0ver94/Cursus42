@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_rules.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:14:00 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/04 12:23:29 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/04 15:33:00 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	pb(t_list **stack_a, t_list **stack_b)
 {	
-	t_list *t;
+	t_list	*tmp;
 
-	t = *stack_a;
+	tmp = *stack_a;
 	if ((*stack_b) == NULL)
 	{
-		*stack_b = ft_lstnew(t->content);
+		*stack_b = ft_lstnew(tmp->content);
 	}
 	else
 	{
-		ft_lstadd_back(stack_b, ft_lstnew(t->content));
+		ft_lstadd_back(stack_b, ft_lstnew(tmp->content));
 	}
 	del_first_elem(stack_a);
 }

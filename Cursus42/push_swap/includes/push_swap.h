@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:26:44 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/06/29 18:38:31 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/04 17:04:18 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,6 @@ void	error_handler(int error);
 void	swap_rules(t_list **stack_a, t_list **stack_b, char *rule);
 void	push_rules(t_list **stack_a, t_list **stack_b, char *rule);
 void	del_first_elem(t_list **lst);
+void	rotate_rules(t_list **stack_a, t_list **stack_b, char *rule);
+void	reverse_rules(t_list **stack_a, t_list **stack_b, char *rule);
+void	sort_algo(t_list **stack_a, t_list **stack_b, int size);

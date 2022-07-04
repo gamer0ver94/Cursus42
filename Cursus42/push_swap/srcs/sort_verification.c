@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_verification.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:13:44 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/04 12:17:19 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/04 18:13:50 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

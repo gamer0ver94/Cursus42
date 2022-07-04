@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_rules.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:14:22 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/04 12:12:23 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/04 17:23:42 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	swap_rules(t_list **stack_a, t_list **stack_b, char *rule)
 {
 	if (rule[0] == 's' && rule[1] == 'a')
 	{
-		
+		printf("----sa----\n");
 		sa(*stack_a);
 	}
 	if (rule[0] == 's' && rule[1] == 'b')
