@@ -6,7 +6,7 @@
 #    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/06/16 16:20:37 by dpaulino         ###   ########.fr        #
+#    Updated: 2022/07/11 18:31:34 by dpaulino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ all				:	${NAME}
 
 clean			:
 					make clean -C libft
-					make clean -C minilibx-linux
+					# make clean -C minilibx-linux
+					make clean -C mlx
 					rm -rf ${OBJS}
 
 fclean			:	clean

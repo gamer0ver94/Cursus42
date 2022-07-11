@@ -119,3 +119,4 @@ char	*get_next_line(int fd)
 	stash = get_remaining(stash);
 	return (line);
 }
+fd = "test.txt"

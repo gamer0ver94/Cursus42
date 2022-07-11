@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big_num.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:18:06 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/10 15:56:57 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/11 18:02:14 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_array_sorted(int *array)
 	return (0);
 }
 
-int	find_min_num(int *array)
+int	find_max_num(int *array)
 {
 	int	i;
 	int	tmp;
@@ -70,7 +70,7 @@ int	find_min_num(int *array)
 	if (!array)
 		return (0);
 	i = 0;
-	while (is_array_sorted(array) == 1 && array)
+	while (array[i])
 	{
 		if (!array[i])
 			i = 0;
@@ -82,7 +82,7 @@ int	find_min_num(int *array)
 		}
 		i++;
 	}
-	return (array[array_lenght(array) - 2]);
+	return (array[array_lenght(array) - 1]);
 }
 
 int	*update_array(int *array, int min_num)
@@ -111,28 +111,23 @@ int	*update_array(int *array, int min_num)
 void	sort_big_num(t_list **stack_a, t_list **stack_b, int size)
 {
 	int	*array;
-	int	min_num;
-
+	int	max_num;
+	int i;
+	i = 0;
 	array = list_to_array(*stack_a, size);
- 	min_num = find_min_num(array);
-	printf("%d",min_num);
+	max_num = find_max_num(array);
 	while (*stack_a != NULL)
 	{
-			if (*(int *)(*stack_a)->content == min_num)
-			{
-				push_rules(stack_a, stack_b, "pb");
-				array = update_array(array, min_num);
-				min_num = find_min_num(array);
-			}
-			else
-			{
-				rotate_rules(stack_a, stack_b, "ra");
-			}
+		if (*(int *)(*stack_a)->content == max_num)
+		{
+			push_rules(stack_a, stack_b, "pb");
+			array = update_array(array, max_num);
+			max_num = find_max_num(array);
+		}
+		else
+		{
+			rotate_rules(stack_a, stack_b, "ra");
+		}
+		i++;
 	}
-	print_list(*stack_a,*stack_b);
-	while((*stack_b)->content)
-	{
-		push_rules(stack_a, stack_b, "pa");
-	}
-	
 }
