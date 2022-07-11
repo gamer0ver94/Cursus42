@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_verification.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:13:44 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/04 18:13:50 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:39:50 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	sort_verification(t_list **list)
 		{
 			if (*(int *)current->content > *(int *)current->next->content)
 			{
-				printf("is not sorted\n");
+				// printf("is not sorted\n");
 				return (1);
 			}
 		}
