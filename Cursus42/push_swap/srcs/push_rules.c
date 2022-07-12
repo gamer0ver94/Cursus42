@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:14:00 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/10 15:55:28 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/12 00:16:53 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	if ((*stack_a) == NULL)
 	{
 		(*stack_a) = ft_lstnew(tmp->content);
-		printf("its NULKLLL");
 	}
 	else
 	{

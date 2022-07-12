@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'main.o', needed by 'push_swap'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 11 16:08:26 2022
+# Make data base, printed on Tue Jul 12 03:04:37 2022
 
 # Variables
 
@@ -59,7 +61,7 @@ VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/92d25e35d
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.8U6OO1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.EX4VO1
 # default
 .LOADED := 
 # default
@@ -73,7 +75,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # makefile (from 'Makefile', line 15)
-SRCS = main.c srcs/create_stack.c srcs/print_list.c srcs/sort_verification.c srcs/error_handler.c srcs/swap_rules.c srcs/push_rules.c srcs/del_first_elem.c srcs/rotate_rules.c srcs/reverse_rules.c srcs/sort_big_num.c
+SRCS = main.c srcs/create_stack.c srcs/print_list.c srcs/sort_verification.c srcs/error_handler.c srcs/swap_rules.c srcs/push_rules.c srcs/del_first_elem.c srcs/rotate_rules.c srcs/reverse_rules.c srcs/sort_big_num.c srcs/smart_rotate.c
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -97,7 +99,7 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3426
+VSCODE_PID = 3165
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -105,7 +107,7 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1539,unix/GameoverStation:/tmp/.ICE-unix/1539
+SESSION_MANAGER = local/GameoverStation:@/tmp/.ICE-unix/1515,unix/GameoverStation:/tmp/.ICE-unix/1515
 # automatic
 *F = $(notdir $*)
 # environment
@@ -155,7 +157,7 @@ LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/100
 # environment
-INVOCATION_ID = ae3e1b67f6a94e31a5a98ea9c75daa6e
+INVOCATION_ID = cd59bb59e0644a71a5e7beba5a2195bc
 # environment
 SNAP_REVISION = 100
 # environment
@@ -193,7 +195,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := push_swap
 # environment
-SYSTEMD_EXEC_PID = 1557
+SYSTEMD_EXEC_PID = 1534
 # environment
 DISPLAY = :0
 # environment
@@ -209,11 +211,11 @@ SNAP_DATA = /var/snap/code/100
 # environment
 SNAP_CONTEXT = xnVtywYhVzLT5l3wcpMSoDl0XhgIJgpIxKPOfm_YdIO8IvxZwekZ
 # environment
-MANAGERPID = 1399
+MANAGERPID = 1375
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3375
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3112
 # environment
 _ = /snap/code/100/usr/share/code/code
 # environment
@@ -225,7 +227,7 @@ CFLAGS = -Wall -Werror -Wextra -ggdb3
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/gameoverstation/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:43453
+JOURNAL_STREAM = 8:42273
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -280,15 +282,14 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Load=133/1024=13%, Rehash=0, Collisions=8/167=5%
 
 # Pattern-specific Variable Values
- 
 
 # No pattern-specific variable values.
 
 # Directories
 
-# . (device 2050, inode 6558043): 11 files, no impossibilities.
+# . (device 2050, inode 6558043): 9 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,29 +299,27 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Not a target:
 srcs/sort_verification.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.50180962
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+ 
 
 # Not a target:
 srcs/create_stack.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.457809443
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 srcs/sort_big_num.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 15:56:59.421116017
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-10 12:58:37.092164153
+#  Last modified 2022-07-12 03:04:35.445230068
 #  File has been updated.
 #  Successfully updated.
 
@@ -341,10 +340,9 @@ re: fclean all
 
 # Not a target:
 srcs/error_handler.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.525809717
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -357,8 +355,7 @@ all: push_swap
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -371,16 +368,14 @@ fclean: clean
 
 # Not a target:
 srcs/rotate_rules.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.617810087
-#  File has been updated.
-#  Successfully updated.
-
-push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o srcs/rotate_rules.o srcs/reverse_rules.o srcs/sort_big_num.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-10 15:56:59.445116102
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
+
+push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o srcs/rotate_rules.o srcs/reverse_rules.o srcs/sort_big_num.o srcs/smart_rotate.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 29):
 					@make -C libft
 					cp libft/libft.a .
@@ -390,30 +385,32 @@ push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.433809346
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
 srcs/print_list.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.477809523
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 srcs/reverse_rules.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.641810184
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 srcs/swap_rules.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.549809813
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/smart_rotate.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
@@ -422,32 +419,31 @@ srcs/swap_rules.o:
 
 # Not a target:
 srcs/del_first_elem.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 14:41:05.597810008
-#  File has been updated.
-#  Successfully updated.
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 srcs/push_rules.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-10 15:55:31.51279217
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=5/50=10%
+# Load=21/1024=2%, Rehash=0, Collisions=5/52=10%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 360 B / avg = 12 B
-# current buf: size = 8162 B / used = 360 B / count = 30 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 31 / storage = 380 B / avg = 12 B
+# current buf: size = 8162 B / used = 380 B / count = 31 / avg = 12 B
 
-# strcache performance: lookups = 51 / hit rate = 41%
+# strcache performance: lookups = 50 / hit rate = 38%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=1/51=2%
-# Finished Make data base on Mon Jul 11 16:08:26 2022
+# Load=31/8192=0%, Rehash=0, Collisions=1/50=2%
+# Finished Make data base on Tue Jul 12 03:04:37 2022
 
  

@@ -6,14 +6,14 @@
 #    By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:18:11 by dpaulino          #+#    #+#              #
-#    Updated: 2022/07/10 12:58:37 by gameoverstation  ###   ########.fr        #
+#    Updated: 2022/07/12 03:04:35 by gameoverstation  ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
 
 SRCS			=	main.c srcs/create_stack.c srcs/print_list.c srcs/sort_verification.c srcs/error_handler.c srcs/swap_rules.c srcs/push_rules.c \
-					srcs/del_first_elem.c srcs/rotate_rules.c srcs/reverse_rules.c srcs/sort_big_num.c
+					srcs/del_first_elem.c srcs/rotate_rules.c srcs/reverse_rules.c srcs/sort_big_num.c srcs/smart_rotate.c
 					
 OBJS			=	${SRCS:.c=.o}
 

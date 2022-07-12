@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   smart_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 17:11:06 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/07/12 03:19:28 by gameoverstation  ###   ########.fr       */
+/*   Created: 2022/07/12 03:04:46 by gameoverstation   #+#    #+#             */
+/*   Updated: 2022/07/12 03:21:32 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	smart_rotate(t_list **stack_a, int small_num, int size)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
-	int		size;
+	t_list	*tmp;
+	int		rotate;
+	int		reverse;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc < 3)
-		error_handler(1);
-	create_stack(&stack_a, argc, argv);
-	size = ft_lstsize(stack_a);
-	sort_big_num(&stack_a, &stack_b, size);
-	return (0);
+	tmp = *stack_a;
+	rotate = 0;
+	reverse = 0;
+	while (*(int *)tmp->content != small_num)
+	{
+		rotate++;
+		tmp = tmp->next;
+	}
+	reverse = size - rotate;
+	if (rotate <= reverse)
+		return (1);
+	else
+		return (2);
 }
