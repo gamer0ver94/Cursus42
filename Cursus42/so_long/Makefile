@@ -6,7 +6,7 @@
 #    By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 23:47:14 by dpaulino          #+#    #+#              #
-#    Updated: 2022/07/11 18:31:34 by dpaulino         ###   ########.fr        #
+#    Updated: 2022/07/12 14:37:00 by dpaulino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME)			:	${OBJS}
 					make -C libft
 					cp ../libft/libft.a .
 					@mv libft.a ${NAME}
-					make -C minilibx-linux
+					# make -C minilibx-linux
 					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS} ${MLX_FLAGS}
 
 all				:	${NAME}

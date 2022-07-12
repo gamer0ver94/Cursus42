@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_rules.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:14:00 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/12 00:16:53 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/12 16:48:53 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ void	push_rules(t_list **stack_a, t_list **stack_b, char *rule)
 {
 	if (rule[0] == 'p' && rule[1] == 'a')
 	{
-		printf("----pa----\n");
+		printf("pa\n");
 		pa(stack_a, stack_b);
 	}
 	if (rule[0] == 'p' && rule[1] == 'b')
 	{
-		printf("----pb----\n");
+		printf("pb\n");
 		pb(stack_a, stack_b);
 	}
 }

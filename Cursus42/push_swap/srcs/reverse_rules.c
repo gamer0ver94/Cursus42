@@ -6,7 +6,7 @@
 /*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:14:06 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/04 16:50:40 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/07/12 16:49:17 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,17 @@ void	reverse_rules(t_list **stack_a, t_list **stack_b, char *rule)
 {
 	if (rule[0] == 'r' && rule[1] == 'r' && rule[2] == 'a')
 	{
-		printf("----rra----\n");
+		printf("rra\n");
 		rra(stack_a);
 	}
 	if (rule[0] == 'r' && rule[1] == 'r' && rule[2] == 'b')
 	{
-		printf("----rrb----\n");
+		printf("rrb\n");
 		rrb(stack_b);
 	}
 	if (rule[0] == 'r' && rule[1] == 'r' && rule[2] == 'r')
 	{
-		printf("----rrr----\n");
+		printf("rrr\n");
 		rrr(stack_a, stack_b);
 	}
 }
