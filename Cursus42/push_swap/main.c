@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:11:06 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/07/12 17:48:25 by dpaulino         ###   ########.fr       */
+/*   Updated: 2022/07/19 10:49:56 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		size;
+	int		*args;
 
 	stack_a = NULL;
 	stack_b = NULL;
+	args = parse_args(argc, argv);
 	if (argc < 2)
 		error_handler(1);
-	create_stack(&stack_a, argc, argv);
-	size = ft_lstsize(stack_a);
-	print_list(stack_a,stack_b);
-	sort_big_num(&stack_a, &stack_b, size);
-	print_list(stack_a,stack_b);
+	create_stack(&stack_a, &args);
+	sort_big_num(&stack_a, &stack_b, args);
+	free(args);
 	return (0);
 }
+// program bugs with zero
+//needs to handle error for doubles
+//free list at the end
