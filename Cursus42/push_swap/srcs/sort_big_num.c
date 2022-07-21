@@ -6,108 +6,178 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:18:06 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/19 11:53:26 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/21 06:47:08 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-int	count_array(int *array)
+
+int	max_number(t_list **stack_a)
 {
-	int	i;
+	t_list	*tmp;
+	int		max;
 
-	i = 0;
-	while(array[i])
-		i++;
-	return(i);
-}
+	max = 0;
+	tmp = *stack_a;
 
-int	*array_cpy(int *args)
-{
-	int	i;
-	int	*new_args;
-
-	i = 0;
-	new_args = malloc(sizeof(int) * count_array(args) + 1);
-	while (args[i])
+	while (tmp)
 	{
-		new_args[i] = args[i];
-		i++;
+		if (*(int *)tmp->content > max)
+		{
+			max = *(int *)tmp->content;
+		}
+		tmp = tmp->next;
 	}
-	return (new_args);
+	return (max);
 }
 
-int *quick_sort(int *args)
+int	max_digit(int max_n)
 {
-	int	i;
-	int	tmp;
-	int *swap;
+	char	*n;
+	int		i;
 
-	swap = array_cpy(args);
 	i = 0;
-	while (swap[i] && swap[i + 1])
+	n = ft_itoa(max_n);
+	while (n[i])
 	{
-		if (swap[i] < swap[i + 1])
-		{
-			i++;
-		}
-		else
-		{
-			tmp = swap[i];
-			swap[i] = swap[i + 1];
-			swap[i + 1] = tmp;
-			i = 0;
-		}
-	}
-	return(swap);
-}
-
-int	find_mid_point(int **args)
-{
-	int mid_point;
-	int *args_update;
-	int	i;
-	int j;
-
-	j = 0;
-	i = 0;
-	args_update = malloc(sizeof(int) * (count_array(*args) / 2));
-	mid_point = *args[count_array(*args) / 2];
-	while(*args[i])
-	{
-		if(*args[i] >= mid_point)
-		{
-			args_update[j] = *args[i];
-			j++;
-		}
 		i++;
 	}
-	return(*args[count_array(*args) / 2]);
+	return (i);
 }
 
-void	sort_big_num(t_list **stack_a, t_list **stack_b, int *args)
-{
-	int	mid_point;
-	int	*sorted_args;
-	int test;
+//suplmentair functions for smart rotations
 
-	test = 0;
-	sorted_args = quick_sort((args));
-	mid_point = find_mid_point(&sorted_args);
+int	find_digit(t_list **stack, char c, int i)
+{
+	char	*n;
+	t_list	*tmp;
+	int		index;
 	
-	while(ft_lstsize(*stack_a) != count_array(sorted_args) / 2)
+	tmp = *stack;
+	while (tmp)
 	{
-		if (*(int *)(*stack_a)->content < mid_point)
+		n = ft_itoa(*(int *)tmp->content);
+		index = ft_strlen(n) - 1 - i;
+		if (n[index] && n[index] == c)
 		{
-			push_rules(stack_a, stack_b, "pb");
+			return (1);
 		}
-		else
-			rotate_rules(stack_a, stack_b, "ra");
+		tmp = tmp->next;
 	}
-	mid_point = find_mid_point(&sorted_args);
-	while(sorted_args[test])
-	{
-		printf("%d\n",sorted_args[test]);
-		test++;
-	}
-	printf("%d",sorted_args[0]);
+	return (0);
 }
+
+int	smarter_rotate(t_list **stack, char c, int i)
+{
+	char	*n;
+	t_list	*tmp;
+	int		index;
+	int		r;
+	int		size;
+
+	r = 0;
+	size = ft_lstsize(*stack);
+	tmp = *stack;
+	while (tmp)
+	{
+		n = ft_itoa(*(int *)tmp->content);
+		index = ft_strlen(n) - 1 - i;
+		if (n[index] == c)
+		{
+			if (r >= size / 2)
+				return (1);//it means rra
+			else
+				return (0);//it means ra
+		}
+		tmp = tmp->next;
+		r++;
+	}
+	return (-1);
+}
+
+int	check_index(t_list **stack, int i)
+{
+	t_list *tmp;
+	char	*n;
+	int index;
+	
+	tmp = *stack;
+	while(tmp)
+	{
+		n = ft_itoa(*(int *)tmp->content);
+		index = ft_strlen(n) - 1 - i;
+		if (!n[index])
+		{
+			return (1);
+		}
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
+void	sort_big_num(t_list **stack_a, t_list **stack_b)
+{
+	int		max_n;
+	int		max_d;
+	char	j;
+	int		i;
+	char	*x;
+	int shit;
+	shit = 0;
+	i = 0;
+	j = '0';
+	max_n = max_number(stack_a);
+	max_d = max_digit(max_n);
+	while (i < max_d || sort_verification(stack_a) == 1)
+	{
+		while (*stack_a != NULL)
+		{	
+			x = ft_itoa(*(int *)(*stack_a)->content);
+			if (x[(ft_strlen(x) - 1) - i] == j || !x[(ft_strlen(x) - 1) - i])
+			{
+				push_rules(stack_a, stack_b, "pb");
+				if(shit == 1)
+				{
+					shit--;
+					reverse_rules(stack_a, stack_b ,"rra");
+				}
+			}
+			else
+			{
+				if(check_index(stack_a, i) == 1)
+				{
+					rotate_rules(stack_a, stack_b, "ra");
+				}
+				else
+				{
+					if (find_digit(stack_a, j, i) == 1)
+					{
+						// if (smarter_rotate(stack_a, j, i) == 1)
+						// 	reverse_rules(stack_a, stack_b,"rra");
+						// else
+							rotate_rules(stack_a, stack_b, "ra");
+							shit++;
+					}
+					else
+					{
+						j++;
+					}
+				}
+			}
+		}
+		j = '0';
+		print_list(*stack_a,*stack_b);
+		printf("________________\n");
+		i++;
+		while (*stack_b != NULL)
+		{
+			push_rules(stack_a, stack_b, "pa");
+		}
+		print_list(*stack_a,*stack_b);
+	}
+	printf("this is max d%d\n",max_d);
+	
+}
+//getmax num
+//get max digit
+//convert int to char and see if digit exit if he does i++

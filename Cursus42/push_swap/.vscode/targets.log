@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 19 08:14:25 2022
+# Make data base, printed on Thu Jul 21 14:28:03 2022
 
 # Variables
 
@@ -59,7 +59,7 @@ VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/b06ae3b2d
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.F6VKP1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.YFFQP1
 # default
 .LOADED := 
 # default
@@ -97,7 +97,7 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2943
+VSCODE_PID = 2926
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -155,7 +155,7 @@ LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/101
 # environment
-INVOCATION_ID = 020e7137644e4796a3dc13b9fb5d632c
+INVOCATION_ID = 7b984c1c3d6f46f68af5eb7c764f8aab
 # environment
 SNAP_REVISION = 101
 # environment
@@ -193,7 +193,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := push_swap
 # environment
-SYSTEMD_EXEC_PID = 1562
+SYSTEMD_EXEC_PID = 1560
 # environment
 DISPLAY = :0
 # environment
@@ -213,7 +213,7 @@ MANAGERPID = 1401
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2898
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2882
 # environment
 _ = /snap/code/101/usr/share/code/code
 # environment
@@ -225,7 +225,7 @@ CFLAGS = -Wall -Werror -Wextra -ggdb3
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/gameoverstation/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:32719
+JOURNAL_STREAM = 8:43614
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -287,6 +287,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # . (device 2050, inode 6558043): 13 files, no impossibilities.
 
+ 
 # 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
@@ -296,24 +297,23 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Files
 
 # Not a target:
- 
 srcs/sort_verification.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.870014625
+#  Last modified 2022-07-20 17:38:52.345386403
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/create_stack.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.822014457
+#  Last modified 2022-07-20 17:38:52.281386784
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/sort_big_num.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:32:31.769692738
+#  Last modified 2022-07-21 06:40:17.596793483
 #  File has been updated.
 #  Successfully updated.
 
@@ -342,7 +342,7 @@ re: fclean all
 # Not a target:
 srcs/error_handler.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.890014695
+#  Last modified 2022-07-20 17:38:52.369386259
 #  File has been updated.
 #  Successfully updated.
 
@@ -372,13 +372,13 @@ fclean: clean
 # Not a target:
 srcs/rotate_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.994015057
+#  Last modified 2022-07-20 17:38:52.465385687
 #  File has been updated.
 #  Successfully updated.
 
 push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o srcs/rotate_rules.o srcs/reverse_rules.o srcs/sort_big_num.o srcs/smart_rotate.o srcs/parse_args.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-14 17:32:31.793692805
+#  Last modified 2022-07-21 06:40:17.624793675
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 29):
@@ -390,42 +390,42 @@ push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o
 # Not a target:
 srcs/parse_args.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:12.090015392
+#  Last modified 2022-07-20 17:40:07.484912438
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:16:15.47082606
+#  Last modified 2022-07-20 17:38:52.261386904
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/print_list.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.846014541
+#  Last modified 2022-07-20 17:38:52.321386546
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/reverse_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:12.018015141
+#  Last modified 2022-07-20 17:38:52.489385544
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/swap_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.918014792
+#  Last modified 2022-07-20 17:38:52.393386116
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/smart_rotate.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:12.062015295
+#  Last modified 2022-07-20 17:40:07.460912596
 #  File has been updated.
 #  Successfully updated.
 
@@ -437,14 +437,14 @@ srcs/smart_rotate.o:
 # Not a target:
 srcs/del_first_elem.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.970014974
+#  Last modified 2022-07-20 17:38:52.44138583
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/push_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 17:12:11.94601489
+#  Last modified 2022-07-20 17:38:52.417385974
 #  File has been updated.
 #  Successfully updated.
 
@@ -462,6 +462,6 @@ srcs/push_rules.o:
 # strcache performance: lookups = 55 / hit rate = 38%
 # hash-table stats:
 # Load=34/8192=0%, Rehash=0, Collisions=1/55=2%
-# Finished Make data base on Tue Jul 19 08:14:25 2022
+# Finished Make data base on Thu Jul 21 14:28:03 2022
 
  

@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:11:06 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/07/19 10:49:56 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/19 19:23:29 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		error_handler(1);
 	create_stack(&stack_a, &args);
-	sort_big_num(&stack_a, &stack_b, args);
+	sort_big_num(&stack_a, &stack_b);
 	free(args);
 	return (0);
 }
