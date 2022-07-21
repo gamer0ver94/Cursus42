@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:19:56 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/06/29 16:13:06 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/21 17:36:15 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

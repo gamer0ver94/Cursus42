@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:26:44 by dpaulino          #+#    #+#             */
-/*   Updated: 2022/07/19 19:23:24 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/21 17:34:03 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

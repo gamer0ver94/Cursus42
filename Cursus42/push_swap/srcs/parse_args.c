@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 22:14:41 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/19 10:40:22 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/21 17:36:32 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

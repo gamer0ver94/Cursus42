@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big_num.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
+/*   By: dpaulino <dpaulino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:18:06 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/21 06:47:08 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/21 17:39:30 by dpaulino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,13 +122,12 @@ void	sort_big_num(t_list **stack_a, t_list **stack_b)
 	char	j;
 	int		i;
 	char	*x;
-	int shit;
-	shit = 0;
+
 	i = 0;
 	j = '0';
 	max_n = max_number(stack_a);
 	max_d = max_digit(max_n);
-	while (i < max_d || sort_verification(stack_a) == 1)
+	while (i < max_d && sort_verification(stack_a) == 1)
 	{
 		while (*stack_a != NULL)
 		{	
@@ -136,11 +135,6 @@ void	sort_big_num(t_list **stack_a, t_list **stack_b)
 			if (x[(ft_strlen(x) - 1) - i] == j || !x[(ft_strlen(x) - 1) - i])
 			{
 				push_rules(stack_a, stack_b, "pb");
-				if(shit == 1)
-				{
-					shit--;
-					reverse_rules(stack_a, stack_b ,"rra");
-				}
 			}
 			else
 			{
@@ -156,7 +150,6 @@ void	sort_big_num(t_list **stack_a, t_list **stack_b)
 						// 	reverse_rules(stack_a, stack_b,"rra");
 						// else
 							rotate_rules(stack_a, stack_b, "ra");
-							shit++;
 					}
 					else
 					{
@@ -166,16 +159,17 @@ void	sort_big_num(t_list **stack_a, t_list **stack_b)
 			}
 		}
 		j = '0';
-		print_list(*stack_a,*stack_b);
-		printf("________________\n");
-		i++;
+		// print_list(*stack_a,*stack_b);
+		// printf("________________\n");
+
 		while (*stack_b != NULL)
 		{
 			push_rules(stack_a, stack_b, "pa");
 		}
 		print_list(*stack_a,*stack_b);
 	}
-	printf("this is max d%d\n",max_d);
+	i++;
+	// printf("this is max d%d\n",max_d);
 	
 }
 //getmax num

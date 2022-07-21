@@ -1,3 +1,6 @@
-**Create function to initialize stack a and stack b
-**Create function to verify if Stack a is sorted
-**Create Rules
+*initialize stacks
+*verify number of args and deal with error handler
+*error handler need to handle if arguments are digits if they reapeat and if if there is one argument if there are more numbers stored in that arg is yes then split those into the list
+*convert list to binary
+for big num take the less significant digit (right)push to b then push all to a
+increment decrement index and repeat
