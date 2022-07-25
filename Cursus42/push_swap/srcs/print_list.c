@@ -6,7 +6,7 @@
 /*   By: gameoverstation <dpaulino@student.42.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 22:28:53 by gameoverstation   #+#    #+#             */
-/*   Updated: 2022/07/04 12:05:50 by gameoverstation  ###   ########.fr       */
+/*   Updated: 2022/07/25 12:31:05 by gameoverstation  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,20 @@ void	print_list(t_list *stack_a, t_list *stack_b)
 	if (list_a != NULL)
 	{
 		printf("STACK A\n");
-		while (list_a->next != NULL)
+		while (list_a)
 		{
-			printf("%d\n", *(int *)list_a->content);
+			printf("%s\n", (char *)list_a->content);
 			list_a = list_a->next;
 		}
-		printf("%d\n\n\n", *(int *)list_a->content);
 	}
 	if (list_b != NULL)
 	{
 		printf("STACK B\n");
-		while (list_b->next != NULL)
+		while (list_b)
 		{
-			printf("%d\n", *(int *)list_b->content);
+			printf("%s\n", (char *)list_b->content);
 			list_b = list_b->next;
 		}
-		printf("%d\n\n", *(int *)list_b->content);
 	}
 	else
 		printf("STACK B\nempty\n\n");
