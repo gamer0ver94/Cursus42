@@ -12,10 +12,9 @@ gcc -g -Wall -Werror -Wextra -ggdb3   -c -o srcs/rotate_rules.o srcs/rotate_rule
 gcc -g -Wall -Werror -Wextra -ggdb3   -c -o srcs/reverse_rules.o srcs/reverse_rules.c
 gcc -g -Wall -Werror -Wextra -ggdb3   -c -o srcs/sort_big_num.o srcs/sort_big_num.c
 gcc -g -Wall -Werror -Wextra -ggdb3   -c -o srcs/smart_rotate.o srcs/smart_rotate.c
-gcc -g -Wall -Werror -Wextra -ggdb3   -c -o srcs/parse_args.o srcs/parse_args.c
 make -C libft
 cp libft/libft.a .
 mv libft.a push_swap
-gcc -g -Wall -Werror -Wextra -ggdb3 -L libft main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o srcs/rotate_rules.o srcs/reverse_rules.o srcs/sort_big_num.o srcs/smart_rotate.o srcs/parse_args.o -o push_swap -lft
+gcc -g -Wall -Werror -Wextra -ggdb3 -L libft main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o srcs/rotate_rules.o srcs/reverse_rules.o srcs/sort_big_num.o srcs/smart_rotate.o -o push_swap -lft
 make: Leaving directory '/home/gameoverstation/Documents/Cursus42/Cursus42/push_swap'
  

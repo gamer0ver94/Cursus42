@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 21 14:28:03 2022
+# Make data base, printed on Tue Aug  2 16:21:22 2022
 
 # Variables
 
@@ -14,6 +14,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
+ 
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
@@ -39,7 +40,7 @@ QT_ACCESSIBILITY = 1
 # environment
 SNAP_INSTANCE_NAME = code
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/101/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -55,11 +56,11 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CODE_CACHE_PATH = /home/gameoverstation/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.YFFQP1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.SMOFQ1
 # default
 .LOADED := 
 # default
@@ -69,11 +70,11 @@ MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/gameoverstation/Documents/Cursus42/Cursus42/push_swap
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # makefile (from 'Makefile', line 15)
-SRCS = main.c srcs/create_stack.c srcs/print_list.c srcs/sort_verification.c srcs/error_handler.c srcs/swap_rules.c srcs/push_rules.c srcs/del_first_elem.c srcs/rotate_rules.c srcs/reverse_rules.c srcs/sort_big_num.c srcs/smart_rotate.c srcs/parse_args.c
+SRCS = main.c srcs/create_stack.c srcs/print_list.c srcs/sort_verification.c srcs/error_handler.c srcs/swap_rules.c srcs/push_rules.c srcs/del_first_elem.c srcs/rotate_rules.c srcs/reverse_rules.c srcs/sort_big_num.c srcs/smart_rotate.c
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -97,7 +98,7 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2926
+VSCODE_PID = 2973
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -153,11 +154,11 @@ SNAP_USER_COMMON = /home/gameoverstation/snap/code/common
 # environment
 LC_TIME = fr_FR.UTF-8
 # environment
-SNAP = /snap/code/101
+SNAP = /snap/code/102
 # environment
-INVOCATION_ID = 7b984c1c3d6f46f68af5eb7c764f8aab
+INVOCATION_ID = af782764d2a04928a6eae49bebe05c1f
 # environment
-SNAP_REVISION = 101
+SNAP_REVISION = 102
 # environment
 SNAP_REAL_HOME = /home/gameoverstation
 # environment
@@ -205,7 +206,7 @@ MAKE_VERSION := 4.3
 # environment
 DISABLE_WAYLAND = 1
 # environment
-SNAP_DATA = /var/snap/code/101
+SNAP_DATA = /var/snap/code/102
 # environment
 SNAP_CONTEXT = xnVtywYhVzLT5l3wcpMSoDl0XhgIJgpIxKPOfm_YdIO8IvxZwekZ
 # environment
@@ -213,9 +214,9 @@ MANAGERPID = 1401
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2882
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2926
 # environment
-_ = /snap/code/101/usr/share/code/code
+_ = /snap/code/102/usr/share/code/code
 # environment
 LC_PAPER = fr_FR.UTF-8
 # environment
@@ -225,7 +226,7 @@ CFLAGS = -Wall -Werror -Wextra -ggdb3
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/gameoverstation/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:43614
+JOURNAL_STREAM = 8:37395
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -237,11 +238,11 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-db09aeac-1.69.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-db09aeac-1.69.2-main.sock
 # environment
 SNAP_NAME = code
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/101/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
 # makefile (from 'Makefile', line 22)
 LIBFT_FLAGS = -lft
 # environment
@@ -251,7 +252,7 @@ IM_CONFIG_PHASE = 1
 # automatic
 <F = $(notdir $<)
 # environment
-SNAP_VERSION = b06ae3b2
+SNAP_VERSION = 3b889b09
 # default
 SUFFIXES := 
 # environment
@@ -265,7 +266,7 @@ SNAP_COMMON = /var/snap/code/common
 # makefile (from 'Makefile', line 24)
 CC = gcc -g
 # environment
-SNAP_USER_DATA = /home/gameoverstation/snap/code/101
+SNAP_USER_DATA = /home/gameoverstation/snap/code/102
 # environment
 XDG_MENU_PREFIX = gnome-
 # makefile (from 'Makefile', line 20)
@@ -277,6 +278,7 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
+ 
 # Load=133/1024=13%, Rehash=0, Collisions=8/167=5%
 
 # Pattern-specific Variable Values
@@ -285,10 +287,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2050, inode 6558043): 13 files, no impossibilities.
+# . (device 2050, inode 6558043): 14 files, no impossibilities.
 
- 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -299,28 +300,28 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Not a target:
 srcs/sort_verification.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.345386403
+#  Last modified 2022-08-02 03:40:54.511470768
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/create_stack.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.281386784
+#  Last modified 2022-08-02 03:40:54.463470418
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/sort_big_num.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 06:40:17.596793483
+#  Last modified 2022-08-02 03:40:54.679471997
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-13 13:35:59.493481959
+#  Last modified 2022-07-28 23:05:35.378346497
 #  File has been updated.
 #  Successfully updated.
 
@@ -342,7 +343,7 @@ re: fclean all
 # Not a target:
 srcs/error_handler.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.369386259
+#  Last modified 2022-08-02 03:40:54.535470944
 #  File has been updated.
 #  Successfully updated.
 
@@ -372,13 +373,13 @@ fclean: clean
 # Not a target:
 srcs/rotate_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.465385687
+#  Last modified 2022-08-02 03:40:54.631471646
 #  File has been updated.
 #  Successfully updated.
 
-push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o srcs/rotate_rules.o srcs/reverse_rules.o srcs/sort_big_num.o srcs/smart_rotate.o srcs/parse_args.o
+push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o srcs/error_handler.o srcs/swap_rules.o srcs/push_rules.o srcs/del_first_elem.o srcs/rotate_rules.o srcs/reverse_rules.o srcs/sort_big_num.o srcs/smart_rotate.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-21 06:40:17.624793675
+#  Last modified 2022-08-02 03:40:55.543478332
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 29):
@@ -388,44 +389,38 @@ push_swap: main.o srcs/create_stack.o srcs/print_list.o srcs/sort_verification.o
 					${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} ${LIBFT_FLAGS}
 
 # Not a target:
-srcs/parse_args.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:40:07.484912438
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
 main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.261386904
+ 
+#  Last modified 2022-08-02 03:40:54.431470183
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/print_list.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.321386546
+#  Last modified 2022-08-02 03:40:54.487470593
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/reverse_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.489385544
+#  Last modified 2022-08-02 03:40:54.655471821
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/swap_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.393386116
+#  Last modified 2022-08-02 03:40:54.55947112
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/smart_rotate.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:40:07.460912596
+#  Last modified 2022-08-02 03:40:54.703472171
 #  File has been updated.
 #  Successfully updated.
 
@@ -437,31 +432,31 @@ srcs/smart_rotate.o:
 # Not a target:
 srcs/del_first_elem.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.44138583
+#  Last modified 2022-08-02 03:40:54.60747147
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/push_rules.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-20 17:38:52.417385974
+#  Last modified 2022-08-02 03:40:54.583471295
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=5/54=9%
+# Load=21/1024=2%, Rehash=0, Collisions=5/52=10%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 424 B / avg = 12 B
-# current buf: size = 8162 B / used = 424 B / count = 34 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 423 B / avg = 12 B
+# current buf: size = 8162 B / used = 423 B / count = 34 / avg = 12 B
 
 # strcache performance: lookups = 55 / hit rate = 38%
 # hash-table stats:
 # Load=34/8192=0%, Rehash=0, Collisions=1/55=2%
-# Finished Make data base on Thu Jul 21 14:28:03 2022
+# Finished Make data base on Tue Aug  2 16:21:22 2022
 
  
